@@ -12,16 +12,12 @@ private:
 public:
     Set4LibInterfaces();
     std::shared_ptr<LibInterface> findInterface(const std::string& libName);
+    bool addInterface(const std::string& libname);
     ~Set4LibInterfaces();
 };
 
 Set4LibInterfaces::Set4LibInterfaces()
-{
-    set4LibInterfaces.insert({"Set", std::make_shared<LibInterface>("Set")});
-    set4LibInterfaces.insert({"Move", std::make_shared<LibInterface>("Move")});
-    set4LibInterfaces.insert({"Pause", std::make_shared<LibInterface>("Pause")});
-    set4LibInterfaces.insert({"Rotate", std::make_shared<LibInterface>("Rotate")});
-}
+{}
 
 std::shared_ptr<LibInterface> Set4LibInterfaces::findInterface(const std::string& libName)
 {
@@ -34,6 +30,16 @@ std::shared_ptr<LibInterface> Set4LibInterfaces::findInterface(const std::string
     return nullptr;
 }
 
-Set4LibInterfaces::~Set4LibInterfaces()
+bool Set4LibInterfaces::addInterface(const std::string& libname)
 {
+    auto libInterface = std::make_shared<LibInterface>();
+    if(!libInterface->initInterface(libname))
+    {
+        return false;
+    }
+    set4LibInterfaces.insert({libname, libInterface});
+    return true;
 }
+
+Set4LibInterfaces::~Set4LibInterfaces()
+{}

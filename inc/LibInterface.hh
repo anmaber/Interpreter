@@ -11,20 +11,35 @@ private:
     void *_pLibHnd;
     Interp4Command *(*pCreateCmd)(void);
 public:
-    LibInterface(const std::string& CmdName);
+    LibInterface();
     bool execActions(std::istream &rIstrm, std::shared_ptr<MobileObj>& mobileObject);
+    bool initInterface(const std::string& CmdName);
     ~LibInterface();
 };
 
-LibInterface::LibInterface(const std::string& CmdName) : _CmdName(CmdName)
+LibInterface::LibInterface()
+{}
+
+bool LibInterface::initInterface(const std::string& CmdName)
 {
     std::string libName("libInterp4");
     libName.append(CmdName);
     libName.append(".so");
-    _pLibHnd = dlopen(libName.c_str(),RTLD_LAZY);  
+    _pLibHnd = dlopen(libName.c_str(),RTLD_LAZY); 
+    if(!_pLibHnd)
+    {
+        return false;
+    }
     void *pFun;
     pFun = dlsym(_pLibHnd,"CreateCmd");
+
+    if(!pFun)
+    {
+        return false;
+    }
     pCreateCmd = *reinterpret_cast<Interp4Command* (**)(void)>(&pFun);
+
+    return true;
 }
 
 bool LibInterface::execActions(std::istream &rIstrm, std::shared_ptr<MobileObj>& mobileObject)
@@ -49,5 +64,8 @@ bool LibInterface::execActions(std::istream &rIstrm, std::shared_ptr<MobileObj>&
 
 LibInterface::~LibInterface()
 {
-    dlclose(_pLibHnd);
+    if(_pLibHnd)
+    {
+        dlclose(_pLibHnd);
+    }
 }

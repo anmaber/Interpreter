@@ -7,8 +7,6 @@
 #include "Set4LibInterfaces.hpp"
 #include "Scene.hh"
 
-using namespace std;
-
 
 #define LINE_SIZE 500
 
@@ -52,7 +50,7 @@ int main(int argc, char **argv)
   for (std::string line; std::getline(IStrm4Cmds, line); )
   {
      std::string libName, objectName;
-     std:istringstream ss(line);
+     std::istringstream ss(line);
      ss >> libName;
      ss >> objectName;
      
@@ -62,11 +60,17 @@ int main(int argc, char **argv)
        scene.addMobileObject(objectName);
      }
      mobileObject = scene.findMobileObject(objectName);
+     
      auto interface = libInerfaces.findInterface(libName);
      if(!interface)
      {
-       std::cerr << "couldnt find interface for: "  << libName << "\n";
-       return 2;
+       bool addedLibSuccesfully = libInerfaces.addInterface(libName);
+       if(!addedLibSuccesfully)
+       {
+          std::cerr << "couldnt init lib: "  << libName << "\n";
+          return 2;
+       }
+       interface = libInerfaces.findInterface(libName);    
      }
      if(!interface->execActions(ss, mobileObject))
      {
