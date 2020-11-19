@@ -1,6 +1,4 @@
-#ifndef MOBILEOBJ_HH
-#define MOBILEOBJ_HH
-
+#pragma once
 
 #include <string>
 #include "Vector3D.hh"
@@ -19,8 +17,8 @@
 
 
    /*!
-    * Nazwy pól klasy są jedynie propozycją i mogą być zmienione
-    * Nazwy metod są obowiązujące.
+    * \brief Klasa modelująca obiekt mobilny.
+    * 
     */
     class MobileObj {
        /*!
@@ -149,6 +147,3 @@
         */
        const std::string & GetName() const { return _Name; }
     };
-
-
-#endif

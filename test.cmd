@@ -2,11 +2,11 @@
 /*
  *  Przykładowy zestaw poleceń
  */
-  Set ObjB 10 10 30
-  Move ObjA 11 13
+  //Rotate ObjB 10 30 22
+  Move obj1 11 13
   //Fly ObjA 100 30
-// Set 1
-  Move ObjA 1 1
-  Set ObjA 11 12 60
-  Pause ObjB 111 111
+  //Set 1
+  Move obj2 1 1
+  //Set ObjA 11 12 60
+  Pause Obj3 111 111
 

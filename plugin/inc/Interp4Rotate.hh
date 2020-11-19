@@ -1,5 +1,4 @@
-#ifndef  COMMAND4Rotate_HH
-#define  COMMAND4Rotate_HH
+#pragma once
 
 #ifndef __GNUG__
 # pragma interface
@@ -60,5 +59,3 @@ class Interp4Rotate: public Interp4Command {
    */
   static Interp4Command* CreateCmd();
  };
-
-#endif

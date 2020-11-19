@@ -1,5 +1,4 @@
-#ifndef  COMMAND4Pause_HH
-#define  COMMAND4Pause_HH
+#pragma once
 
 #ifndef __GNUG__
 # pragma interface
@@ -59,5 +58,3 @@ class Interp4Pause: public Interp4Command {
    */
   static Interp4Command* CreateCmd();
  };
-
-#endif

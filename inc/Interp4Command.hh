@@ -1,5 +1,4 @@
-#ifndef  INTERP4COMMAND_HH
-#define  INTERP4COMMAND_HH
+#pragma once
 
 #include <iostream>
 #include "MobileObj.hh"
@@ -8,13 +7,14 @@
  * \file
  * \brief Definicja klasy Interp4Command
  *
- * Plik zawiera definicję klasy Interp4Command ...
+ * Plik zawiera definicję klasy Interp4Command.
  */
 
 /*!
  * \brief Modeluje abstrakcyjne polecenie dla robota mobilnego
  *
- *  Klasa modeluje ...
+ *  Klasa modeluje abstrakcyjne polecenie dla robota mobilnego, jest ona rodzicem dla poleceń Move, Set, Pause, Rotate.
+ * Bazując na niej można uworzyc nową wtyczkę, która interpretuje polecenia dla robota.
  */
  class Interp4Command {
   public:
@@ -45,5 +45,3 @@
     */
    virtual bool ReadParams(std::istream& Strm_CmdsList) = 0;
  };
-
-#endif

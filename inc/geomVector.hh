@@ -1,6 +1,4 @@
-#ifndef GEOMVECTOR_HH
-#define GEOMVECTOR_HH
-
+#pragma once
 /*!
  * \file
  * \brief Definicja szablonu wektora N-wymiarowego.
@@ -431,7 +429,3 @@ std::ostream & operator << ( std::ostream &OStrm, const geom::Vector<Type,Size> 
    OStrm << ")";
    return OStrm;
 }
-
-
-
-#endif

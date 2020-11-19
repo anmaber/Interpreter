@@ -1,6 +1,4 @@
-#ifndef VECTOR3D_HH
-#define VECTOR3D_HH
-
+#pragma once
 #include "geomVector.hh"
 
 /*!
@@ -12,5 +10,3 @@
   * \brief Instacja szablonu geom::Vector<typename,int> dla przestrzeni 3D.
   */
  typedef geom::Vector<double,3>  Vector3D;
-
-#endif

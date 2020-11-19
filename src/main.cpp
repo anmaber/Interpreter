@@ -1,82 +1,93 @@
+//TO DO format, użyć wszedzie pragma once
 #include <iostream>
-#include <dlfcn.h>
 #include <cassert>
-#include "MobileObj.hh"
 #include <string>
 #include <sstream>
-#include "Set4LibInterfaces.hpp"
-#include "Scene.hh"
 
+#include "xmlinterp.hh"
+#include <list>
 
 #define LINE_SIZE 500
 
-bool ExecPreprocesor( const char * NazwaPliku, std::istringstream &IStrm4Cmds )
+
+bool ExecPreprocesor(const char *NazwaPliku, std::istringstream &IStrm4Cmds)
 {
-    std::string Cmd4Preproc = "cpp -P ";
-    char Line[LINE_SIZE];
-    std::ostringstream OTmpStrm;
-    Cmd4Preproc += NazwaPliku;
-    FILE* pProc = popen(Cmd4Preproc.c_str(),"r");
-    if (!pProc) return false;
-    while (fgets(Line,LINE_SIZE,pProc))
-    {
-        OTmpStrm << Line;
-    }
-    IStrm4Cmds.str(OTmpStrm.str());
-    return pclose(pProc) == 0;
+     std::string Cmd4Preproc = "cpp -P ";
+     char Line[LINE_SIZE];
+     std::ostringstream OTmpStrm;
+     Cmd4Preproc += NazwaPliku;
+     FILE *pProc = popen(Cmd4Preproc.c_str(), "r");
+     if (!pProc)
+          return false;
+     while (fgets(Line, LINE_SIZE, pProc))
+     {
+          OTmpStrm << Line;
+     }
+     IStrm4Cmds.str(OTmpStrm.str());
+     return pclose(pProc) == 0;
 }
+
+/*!
+ * Czyta z pliku opis poleceń i dodaje je do listy komend,
+ * które robot musi wykonać.
+ * \param sFileName - (\b we.) nazwa pliku z opisem poleceń.
+ * \param CmdList - (\b we.) zarządca listy poleceń dla robota.
+ * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
+ * \retval false - w przeciwnym przypadku.
+ */
+
 
 int main(int argc, char **argv)
 {
-  if(argc < 2)
-  {
-      std::cerr << "Too few arguments\n";
-      return 1;
-  }
+     Set4LibInterfaces libInterfaces;
+     Scene scene;
 
-  std::istringstream IStrm4Cmds;
+     Configuration Config(libInterfaces, scene);
 
-  if(!ExecPreprocesor(argv[1], IStrm4Cmds))
-  {
-      std::cerr<< "Cannot process\n";
-      return 2;
-  }
+     if (!ReadFile("../config/config.xml", Config))
+          return 1;
 
-  std::cout << IStrm4Cmds.str() << "\n";  
-
-  Set4LibInterfaces libInerfaces;
-  Scene scene;
-
-  for (std::string line; std::getline(IStrm4Cmds, line); )
-  {
-     std::string libName, objectName;
-     std::istringstream ss(line);
-     ss >> libName;
-     ss >> objectName;
-     
-     auto mobileObject = scene.findMobileObject(objectName);
-     if(!mobileObject)
+     if (argc < 2)
      {
-       scene.addMobileObject(objectName);
+          std::cerr << "Too few arguments\n";
+          return 1;
      }
-     mobileObject = scene.findMobileObject(objectName);
-     
-     auto interface = libInerfaces.findInterface(libName);
-     if(!interface)
+
+     std::istringstream IStrm4Cmds;
+
+     if (!ExecPreprocesor(argv[1], IStrm4Cmds))
      {
-       bool addedLibSuccesfully = libInerfaces.addInterface(libName);
-       if(!addedLibSuccesfully)
-       {
-          std::cerr << "couldnt init lib: "  << libName << "\n";
+          std::cerr << "Cannot process\n";
           return 2;
-       }
-       interface = libInerfaces.findInterface(libName);    
      }
-     if(!interface->execActions(ss, mobileObject))
+
+     std::cout << IStrm4Cmds.str() << "\n";
+
+     for (std::string line; std::getline(IStrm4Cmds, line);)
      {
-       std::cerr << "couldnt execute action for: " << ss.str()<< "\n";
-       return 2;
+          std::string libName, objectName;
+          std::istringstream ss(line);
+          ss >> libName;
+          ss >> objectName;
+
+          std::shared_ptr<MobileObj> mobileObject = scene.findMobileObject(objectName);
+          if (!mobileObject)
+          {
+               std::cerr << "couldnt find object: " << objectName << "\n";
+               return 2;
+          }
+          std::shared_ptr<LibInterface> interface = libInterfaces.findInterface(libName);
+          if (!interface)
+          {
+               std::cerr << "couldnt find lib: " << libName << "\n";
+               return 2;
+          }
+
+          if (!interface->execActions(ss, mobileObject))
+          {
+               std::cerr << "couldnt execute action for: " << ss.str() << "\n";
+               return 2;
+          }
      }
-  }
-  return 0;
+     return 0;
 }
