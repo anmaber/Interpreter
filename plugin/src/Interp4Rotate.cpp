@@ -56,11 +56,59 @@ const char* Interp4Rotate::GetCmdName() const
 /*!
  *
  */
-bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Rotate::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  int period = static_cast<int>(1000000.0 / std::abs(_angularVelocity));
+  auto initialOrientation = pMobObj->GetAng_Yaw_deg();
+
+  double delta = 0;
+  if (_angularVelocity < 0)
+  {
+    _angle = -_angle;
+    delta = -1;
+  }
+  else
+  {
+    delta = 1;
+  }
+
+  double destination = initialOrientation + _angle;
+
+  while (true)
+  {
+    pAccessControl->LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
+                                  // modyfikacje na obiekcie.
+    auto currentOrientation = pMobObj->GetAng_Yaw_deg();
+    auto currentPosition = pMobObj->GetPositoin_m();
+    std::stringstream cmd;
+    //TO DO -  cmd umiescic w obekcie mobilnym a potem to brać w senderze
+    cmd << "Cube  "
+    << pMobObj->Get_X_Size() << " "
+    << pMobObj->Get_Y_Size() << " "
+    << pMobObj->Get_Z_Size() << " "
+    << currentPosition[0] << " " 
+    << currentPosition[1] << " "
+    << currentPosition[2] << " "
+    << pMobObj->GetAng_Roll_deg() << " "
+    << pMobObj->GetAng_Pitch_deg() << " "
+    << pMobObj->GetAng_Yaw_deg() + delta << " "
+    << pMobObj->Get_Red_Value() << " "
+    << pMobObj->Get_Blue_Value() << " "
+    << pMobObj->Get_Green_Value() << "\n";
+    
+    double partialDestination = currentOrientation + delta;
+
+    if (compareDouble(partialDestination, destination))
+    {
+      pAccessControl->UnlockAccess();
+      break;
+    }
+    pMobObj->SetAng_Yaw_deg(partialDestination);
+    pMobObj->movingState = cmd.str();
+    pAccessControl->MarkChange();
+    pAccessControl->UnlockAccess();
+    usleep(period);
+  }
   return true;
 }
 

@@ -56,12 +56,14 @@ const char* Interp4Pause::GetCmdName() const
 /*!
  *
  */
-bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Pause::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+pAccessControl->LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
+                                  // modyfikacje na obiekcie.
+usleep(_PauseTime_ms*1000);
+pAccessControl->UnlockAccess();
+    
+    return true;
 }
 
 

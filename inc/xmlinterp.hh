@@ -212,7 +212,7 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes &Attrs)
 
   // Tu trzeba wstawić odpowiednio własny kod ...
   //TO DO: przenies caly fragment do config
-  config.scene.addMobileObject(sValue_Name);
+  config.scene.addMobileObject(sValue_Name,sValue_SizeXYZ,sValue_RGB);
 
   xercesc::XMLString::release(&sName_Name);
   xercesc::XMLString::release(&sName_SizeXYZ);

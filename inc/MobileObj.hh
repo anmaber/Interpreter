@@ -2,6 +2,8 @@
 
 #include <string>
 #include "Vector3D.hh"
+#include <vector>
+#include <string>
 
 
 /*!
@@ -21,6 +23,17 @@
     * 
     */
     class MobileObj {
+
+        double _X_Size = 0;
+
+        double _Y_Size = 0;
+
+        double _Z_Size = 0;
+
+        int _Red_Value = 0;
+        int _Green_Value = 0;
+        int _Blue_Value = 0;
+
        /*!
         * \brief Kąt \e yaw reprezentuje rotację zgodnie z ruchem wskazówek zegara
         *        wokół osi \e OZ.
@@ -65,6 +78,22 @@
        std::string  _Name;
 
      public:
+        double Get_X_Size() const {return _X_Size;}
+        double Get_Y_Size() const {return _Y_Size;}
+        double Get_Z_Size() const {return _Z_Size;}
+
+        void Set_X_Size(double X_Size) { _X_Size = X_Size;}
+        void Set_Y_Size(double Y_Size) { _Y_Size = Y_Size;}
+        void Set_Z_Size(double Z_Size) { _Z_Size = Z_Size;}
+
+        int Get_Red_Value() const {return _Red_Value;}
+        int Get_Green_Value() const {return _Green_Value;}
+        int Get_Blue_Value() const {return _Blue_Value;}
+        
+        void Set_Red_Value(int Red_Value) {_Red_Value = Red_Value;}
+        void Set_Green_Value(int Green_Value) {_Green_Value = Green_Value;}
+        void Set_Blue_Value(int Blue_Value) {_Blue_Value = Blue_Value;}
+
       /*!
        * \brief Udostępia wartość kąta \e roll.
        *
@@ -146,4 +175,6 @@
 	* Udostępnia nazwę obiektu w trybie tylko do odczytu.
         */
        const std::string & GetName() const { return _Name; }
+
+       std::string movingState {"Cube  0 0 0  0 0 0  0 0 0  0 0 0\n"};
     };

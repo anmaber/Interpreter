@@ -5,10 +5,10 @@
 #include <sstream>
 
 #include "xmlinterp.hh"
+#include "sender.hpp"
 #include <list>
 
 #define LINE_SIZE 500
-
 
 bool ExecPreprocesor(const char *NazwaPliku, std::istringstream &IStrm4Cmds)
 {
@@ -36,7 +36,6 @@ bool ExecPreprocesor(const char *NazwaPliku, std::istringstream &IStrm4Cmds)
  * \retval false - w przeciwnym przypadku.
  */
 
-
 int main(int argc, char **argv)
 {
      Set4LibInterfaces libInterfaces;
@@ -60,8 +59,17 @@ int main(int argc, char **argv)
           std::cerr << "Cannot process\n";
           return 2;
      }
-
      std::cout << IStrm4Cmds.str() << "\n";
+
+     cout << "Port: " << PORT << endl;
+     int Socket4Sending;
+
+     if (!OpenConnection(Socket4Sending))
+          return 1;
+
+     Sender ClientSender(Socket4Sending, &scene);
+
+     thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
 
      for (std::string line; std::getline(IStrm4Cmds, line);)
      {
@@ -83,11 +91,18 @@ int main(int argc, char **argv)
                return 2;
           }
 
-          if (!interface->execActions(ss, mobileObject))
+          if (!interface->execActions(ss, mobileObject, &scene))
           {
                std::cerr << "couldnt execute action for: " << ss.str() << "\n";
                return 2;
           }
      }
+     usleep(100000);
+     cout << "Close\n"
+          << endl; // To tylko, aby pokazac wysylana instrukcje
+     Send(Socket4Sending, "Close\n");
+     ClientSender.CancelCountinueLooping();
+     Thread4Sending.join();
+     close(Socket4Sending);
      return 0;
 }

@@ -42,7 +42,7 @@ class Interp4Pause: public Interp4Command {
   /*!
    * \brief Wykonuje polecenie oraz wizualizuje jego realizację
    */
-  virtual bool ExecCmd( MobileObj  *pMobObj, int Socket) const;
+  virtual bool ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl);
   /*!
    * \brief Czyta wartości parametrów danego polecenia
    */

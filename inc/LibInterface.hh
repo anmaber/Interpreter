@@ -45,7 +45,7 @@ public:
  * Wyświetla składnię polecenia, następnie wczytywane są parametry ze strumienia. W razie niepowodzenia zwracane jest false.
  * W razie powodzenia wyświetlane jest dla jakiego obiektu mają być wykonane polecenia oraz zadane polecenie, następnie zwracane jest true.
  */
-    bool execActions(std::istream &rIstrm, std::shared_ptr<MobileObj> &mobileObject);
+    bool execActions(std::istream &rIstrm, std::shared_ptr<MobileObj> &mobileObject, AccessControl *pAccessControl);
     /*!
  * \brief Metoda inicjalizująca wtyczkę.
  * \param[in] -- nazwa wtyczki
@@ -82,7 +82,7 @@ bool LibInterface::initInterface(const std::string &CmdName)
     return true;
 }
 
-bool LibInterface::execActions(std::istream &rIstrm, std::shared_ptr<MobileObj> &mobileObject)
+bool LibInterface::execActions(std::istream &rIstrm, std::shared_ptr<MobileObj> &mobileObject,  AccessControl *pAccessControl)
 {
     Interp4Command *pCmd = pCreateCmd();
     std::cout << "Polecenie: " << std::endl;
@@ -98,6 +98,7 @@ bool LibInterface::execActions(std::istream &rIstrm, std::shared_ptr<MobileObj> 
     std::cout << std::endl;
     pCmd->PrintCmd();
     std::cout << std::endl;
+    pCmd->ExecCmd(mobileObject.get(), pAccessControl);
     delete pCmd;
     return true;
 }

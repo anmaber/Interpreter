@@ -3,6 +3,7 @@
       <Lib Name="libInterp4Move.so"/>
       <Lib Name="libInterp4Rotate.so"/>
       <Lib Name="libInterp4Pause.so"/>
+      <Lib Name="libInterp4Set.so"/>
    </Plugins>
    <Objects>
       <Cube Name="obj1" SizeXYZ="10 15 5"    RGB="0 0 255"/>

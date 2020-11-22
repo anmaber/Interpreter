@@ -8,6 +8,6 @@ add_subdirectory(plugin)
 
 include_directories(inc config)
 add_executable(${PROJECT_NAME} src/main.cpp)
-target_link_libraries(${PROJECT_NAME} dl xerces-c Interp4Move Interp4Set Interp4Pause Interp4Rotate)
+target_link_libraries(${PROJECT_NAME} dl xerces-c -pthread Interp4Move Interp4Set Interp4Pause Interp4Rotate)
 #target_link_libraries(${PROJECT_NAME}  xerces-c)
 #target_link_libraries(${PROJECT_NAME}  Interp4Move Interp4Set Interp4Pause Interp4Rotate)

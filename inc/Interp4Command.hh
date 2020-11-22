@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include "MobileObj.hh"
+#include "Scene.hh"
+#include <cmath>
+#include <limits>
+#include <unistd.h>
 
 /*!
  * \file
@@ -39,9 +43,15 @@
    /*!
     * \brief Wykonuje polecenie oraz wizualizuje jego realizację.
     */
-   virtual bool ExecCmd( MobileObj *pMobObj, int Socket ) const = 0;
+   virtual bool ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl) = 0;
    /*!
     * \brief Czyta wartości parametrów danego polecenia.
     */
    virtual bool ReadParams(std::istream& Strm_CmdsList) = 0;
  };
+
+
+bool compareDouble(double x, double y)
+{
+  return std::fabs(x - y) <= 0.001;
+}

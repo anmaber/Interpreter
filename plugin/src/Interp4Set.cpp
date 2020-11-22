@@ -56,12 +56,37 @@ const char* Interp4Set::GetCmdName() const
 /*!
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Set::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+    pAccessControl->LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
+                                  // modyfikacje na obiekcie.
+    std::stringstream cmd;
+
+    auto endPosition = pMobObj->GetPositoin_m();
+    endPosition[0] = _X_Coordinate;
+    endPosition[1] = _Y_Coordinate;
+    pMobObj->SetAng_Yaw_deg(_OZ_Angle);
+
+    //TO DO -  cmd umiescic w obekcie mobilnym a potem to brać w senderze
+    cmd << "Cube  "
+    << pMobObj->Get_X_Size() << " "
+    << pMobObj->Get_Y_Size() << " "
+    << pMobObj->Get_Z_Size() << " "
+    << endPosition[0] << " " 
+    << endPosition[1] << " "
+    << endPosition[2] << " "
+    << pMobObj->GetAng_Roll_deg() << " "
+    << pMobObj->GetAng_Pitch_deg() << " "
+    << pMobObj->GetAng_Yaw_deg() << " "
+    << pMobObj->Get_Red_Value() << " "
+    << pMobObj->Get_Blue_Value() << " "
+    << pMobObj->Get_Green_Value() << "\n";
+    
+    pMobObj->movingState = cmd.str();
+    pAccessControl->MarkChange();
+    pAccessControl->UnlockAccess();
+    usleep(300);
+    return true;
 }
 
 
