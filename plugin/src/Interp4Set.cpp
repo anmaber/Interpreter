@@ -2,17 +2,10 @@
 #include "Interp4Set.hh"
 #include "MobileObj.hh"
 
-using std::cout;
-using std::endl;
-
-
 extern "C" {
  Interp4Command* CreateCmd(void);
   const char* GetCmdName() { return "Set"; }
 }
-
-
-
 
 /*!
  * \brief
@@ -40,7 +33,7 @@ void Interp4Set::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << _X_Coordinate << " " <<  _Y_Coordinate << " " << _OZ_Angle << endl;
+  std::cout << GetCmdName() << " " << _X_Coordinate << " " <<  _Y_Coordinate << " " << _OZ_Angle << std::endl;
 }
 
 
@@ -114,5 +107,5 @@ Interp4Command* Interp4Set::CreateCmd()
  */
 void Interp4Set::PrintSyntax() const
 {
-  cout << "   Set  NazwaObiektu  WspolrzednaX  WspolrzednaY KatOZ" << endl;
+  std::cout << "   Set  NazwaObiektu  WspolrzednaX  WspolrzednaY KatOZ" << std::endl;
 }

@@ -2,35 +2,28 @@
 #include "Interp4Rotate.hh"
 #include "MobileObj.hh"
 
-using std::cout;
-using std::endl;
-
-
-extern "C" {
- Interp4Command* CreateCmd(void);
-  const char* GetCmdName() { return "Rotate"; }
+extern "C"
+{
+  Interp4Command *CreateCmd(void);
+  const char *GetCmdName() { return "Rotate"; }
 }
-
-
-
 
 /*!
  * \brief
  *
  *
  */
-Interp4Command* CreateCmd(void)
+Interp4Command *CreateCmd(void)
 {
   return Interp4Rotate::CreateCmd();
 }
-
 
 /*!
  *
  */
 Interp4Rotate::Interp4Rotate()
-{}
-
+{
+}
 
 /*!
  *
@@ -40,23 +33,21 @@ void Interp4Rotate::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << _angularVelocity << " " << _angle << endl;
+  std::cout << GetCmdName() << " " << _angularVelocity << " " << _angle << std::endl;
 }
-
 
 /*!
  *
  */
-const char* Interp4Rotate::GetCmdName() const
+const char *Interp4Rotate::GetCmdName() const
 {
   return ::GetCmdName();
 }
 
-
 /*!
  *
  */
-bool Interp4Rotate::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
+bool Interp4Rotate::ExecCmd(MobileObj *pMobObj, AccessControl *pAccessControl)
 {
   int period = static_cast<int>(1000000.0 / std::abs(_angularVelocity));
   auto initialOrientation = pMobObj->GetAng_Yaw_deg();
@@ -81,21 +72,21 @@ bool Interp4Rotate::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
     auto currentOrientation = pMobObj->GetAng_Yaw_deg();
     auto currentPosition = pMobObj->GetPositoin_m();
     std::stringstream cmd;
-    //TO DO -  cmd umiescic w obekcie mobilnym a potem to brać w senderze
+
     cmd << "Cube  "
-    << pMobObj->Get_X_Size() << " "
-    << pMobObj->Get_Y_Size() << " "
-    << pMobObj->Get_Z_Size() << " "
-    << currentPosition[0] << " " 
-    << currentPosition[1] << " "
-    << currentPosition[2] << " "
-    << pMobObj->GetAng_Roll_deg() << " "
-    << pMobObj->GetAng_Pitch_deg() << " "
-    << pMobObj->GetAng_Yaw_deg() + delta << " "
-    << pMobObj->Get_Red_Value() << " "
-    << pMobObj->Get_Blue_Value() << " "
-    << pMobObj->Get_Green_Value() << "\n";
-    
+        << pMobObj->Get_X_Size() << " "
+        << pMobObj->Get_Y_Size() << " "
+        << pMobObj->Get_Z_Size() << " "
+        << currentPosition[0] << " "
+        << currentPosition[1] << " "
+        << currentPosition[2] << " "
+        << pMobObj->GetAng_Roll_deg() << " "
+        << pMobObj->GetAng_Pitch_deg() << " "
+        << pMobObj->GetAng_Yaw_deg() + delta << " "
+        << pMobObj->Get_Red_Value() << " "
+        << pMobObj->Get_Blue_Value() << " "
+        << pMobObj->Get_Green_Value() << "\n";
+
     double partialDestination = currentOrientation + delta;
 
     if (compareDouble(partialDestination, destination))
@@ -112,30 +103,32 @@ bool Interp4Rotate::ExecCmd( MobileObj *pMobObj, AccessControl *pAccessControl)
   return true;
 }
 
-
 /*!
  *
  */
-bool Interp4Rotate::ReadParams(std::istream& Strm_CmdsList)
+bool Interp4Rotate::ReadParams(std::istream &Strm_CmdsList)
 {
   Strm_CmdsList >> _angularVelocity >> _angle;
+  if(_angle < 0)
+  {
+    std::cerr << " angle cannot be less than 0 \n";
+    return false;
+  }
   return !Strm_CmdsList.fail();
 }
 
-
 /*!
  *
  */
-Interp4Command* Interp4Rotate::CreateCmd()
+Interp4Command *Interp4Rotate::CreateCmd()
 {
   return new Interp4Rotate();
 }
-
 
 /*!
  *
  */
 void Interp4Rotate::PrintSyntax() const
 {
-  cout << "   Rotate  NazwaObiektu  predkoscKatowa katObrotu" << endl;
+  std::cout << "   Rotate  NazwaObiektu  predkoscKatowa katObrotu" << std::endl;
 }

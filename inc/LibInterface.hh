@@ -37,8 +37,9 @@ public:
     LibInterface() = default;
     /*!
  * \brief Metoda umożliwiająca wykonanie poleceń
- * \param[in] - referencja do strumienia zawierającego polecenia
- * \param[in] -- referencja do wskaźnika na obiekt, na którym mają zostać wykonane polecenia
+ * \param[in] rIstrm -- referencja do strumienia zawierającego polecenia
+ * \param[in] mobileObject -- referencja do wskaźnika na obiekt, na którym mają zostać wykonane polecenia
+ * \param[in] pAccessControl -- wskaźnik na obiekt zajmujący się kontrolą dostępu
  * \retval true -- jeżeli wykonywane operacje się powiodą
  * \retval false -- jeżeli wykonywane operacje się nie powiodą
  * 

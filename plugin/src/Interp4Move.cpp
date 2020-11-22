@@ -3,9 +3,6 @@
 #include "MobileObj.hh"
 #include <sstream>
 
-using std::cout;
-using std::endl;
-
 extern "C"
 {
   Interp4Command *CreateCmd(void);
@@ -38,7 +35,7 @@ void Interp4Move::PrintCmd() const
   /*
    *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
    */
-  cout << GetCmdName() << " " << _Speed_mmS << " " << _PathLength_m << endl;
+  std::cout << GetCmdName() << " " << _Speed_mmS << " " << _PathLength_m << std::endl;
 }
 
 /*!
@@ -76,35 +73,41 @@ bool Interp4Move::ExecCmd(MobileObj *pMobObj, AccessControl *pAccessControl)
                                   // modyfikacje na obiekcie.
     auto currentPosition = pMobObj->GetPositoin_m();
     std::stringstream cmd;
-    //TO DO -  cmd umiescic w obekcie mobilnym a potem to brać w senderze
+
     cmd << "Cube  "
-    << pMobObj->Get_X_Size() << " "
-    << pMobObj->Get_Y_Size() << " "
-    << pMobObj->Get_Z_Size() << " "
-    << currentPosition[0] + delta << " " 
-    << currentPosition[1] << " "
-    << currentPosition[2] << " "
-    << pMobObj->GetAng_Roll_deg() << " "
-    << pMobObj->GetAng_Pitch_deg() << " "
-    << pMobObj->GetAng_Yaw_deg() << " "
-    << pMobObj->Get_Red_Value() << " "
-    << pMobObj->Get_Blue_Value() << " "
-    << pMobObj->Get_Green_Value() << "\n";
+        << pMobObj->Get_X_Size() << " "
+        << pMobObj->Get_Y_Size() << " "
+        << pMobObj->Get_Z_Size() << " "
+        << currentPosition[0] + delta << " "
+        << currentPosition[1] << " "
+        << currentPosition[2] << " "
+        << pMobObj->GetAng_Roll_deg() << " "
+        << pMobObj->GetAng_Pitch_deg() << " "
+        << pMobObj->GetAng_Yaw_deg() << " "
+        << pMobObj->Get_Red_Value() << " "
+        << pMobObj->Get_Blue_Value() << " "
+        << pMobObj->Get_Green_Value() << "\n";
+
     Vector3D partialDestination;
+
     partialDestination[0] = currentPosition[0] + delta;
     partialDestination[1] = currentPosition[1];
     partialDestination[2] = currentPosition[2];
+
     if (compareDouble(partialDestination[0], destination))
     {
       pAccessControl->UnlockAccess();
       break;
     }
+
     pMobObj->SetPosition_m(partialDestination);
     pMobObj->movingState = cmd.str();
+
     pAccessControl->MarkChange();
     pAccessControl->UnlockAccess();
     usleep(period);
   }
+
   return true;
 }
 
@@ -114,6 +117,11 @@ bool Interp4Move::ExecCmd(MobileObj *pMobObj, AccessControl *pAccessControl)
 bool Interp4Move::ReadParams(std::istream &Strm_CmdsList)
 {
   Strm_CmdsList >> _Speed_mmS >> _PathLength_m;
+  if(_PathLength_m < 0)
+  {
+    std::cout << "Path lenght cannot be less than 0. \n";
+    return false;
+  }
   return !Strm_CmdsList.fail();
 }
 
@@ -130,5 +138,5 @@ Interp4Command *Interp4Move::CreateCmd()
  */
 void Interp4Move::PrintSyntax() const
 {
-  cout << "   Move  NazwaObiektu  Szybkosc[m/s]  DlugoscDrogi[m]" << endl;
+  std::cout << "   Move  NazwaObiektu  Szybkosc[m/s]  DlugoscDrogi[m]" << std::endl;
 }

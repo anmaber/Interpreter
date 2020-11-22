@@ -38,7 +38,9 @@ public:
     std::shared_ptr<MobileObj> findMobileObject(const std::string &objectName);
     /*!
  * \brief metoda umożliwiająca dodanie nowego obiektu mobilnego.
- * \param[in] objectName - nazwa obiektu.
+ * \param[in] objectName - nazwa obiektu
+ * \param[in] size - rozmiar obiektu
+ * \param[in] rgb - kolor obiektu
  */
     void addMobileObject(const std::string &objectName, std::string size, std::string rgb);
     Scene() = default;
@@ -62,17 +64,22 @@ void Scene::addMobileObject(const std::string &objectName, std::string size, std
         std::istringstream sizeStream(size);
         double x,y,z;
         sizeStream >> x >> y >> z;
+
         std::istringstream colorStream(rgb);
         int r,g,b;
         colorStream >> r >> g >> b;
+
         auto mobileObject = std::make_shared<MobileObj>();
         mobileObject->SetName(objectName);
+
         mobileObject->Set_X_Size(x);
         mobileObject->Set_Y_Size(y);
         mobileObject->Set_Z_Size(z);
+
         mobileObject->Set_Red_Value(r);
         mobileObject->Set_Green_Value(g);
         mobileObject->Set_Blue_Value(b);
+
         mobileObjects.insert({objectName, mobileObject});
     }
 }

@@ -10,11 +10,11 @@
 
 #define LINE_SIZE 500
 
-bool ExecPreprocesor(const char *NazwaPliku, std::istringstream &IStrm4Cmds)
+bool ExecPreprocesor(const char *NazwaPliku, std::stringstream &IStrm4Cmds)
 {
      std::string Cmd4Preproc = "cpp -P ";
      char Line[LINE_SIZE];
-     std::ostringstream OTmpStrm;
+     std::stringstream OTmpStrm;
      Cmd4Preproc += NazwaPliku;
      FILE *pProc = popen(Cmd4Preproc.c_str(), "r");
      if (!pProc)
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
           return 1;
      }
 
-     std::istringstream IStrm4Cmds;
+     std::stringstream IStrm4Cmds;
 
      if (!ExecPreprocesor(argv[1], IStrm4Cmds))
      {
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
      }
      std::cout << IStrm4Cmds.str() << "\n";
 
-     cout << "Port: " << PORT << endl;
+     std::cout << "Port: " << PORT << std::endl;
      int Socket4Sending;
 
      if (!OpenConnection(Socket4Sending))
@@ -69,15 +69,11 @@ int main(int argc, char **argv)
 
      Sender ClientSender(Socket4Sending, &scene);
 
-     thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
+     std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
 
-     for (std::string line; std::getline(IStrm4Cmds, line);)
+     std::string libName, objectName;
+     while(IStrm4Cmds >> libName >> objectName)
      {
-          std::string libName, objectName;
-          std::istringstream ss(line);
-          ss >> libName;
-          ss >> objectName;
-
           std::shared_ptr<MobileObj> mobileObject = scene.findMobileObject(objectName);
           if (!mobileObject)
           {
@@ -91,15 +87,14 @@ int main(int argc, char **argv)
                return 2;
           }
 
-          if (!interface->execActions(ss, mobileObject, &scene))
+          if (!interface->execActions(IStrm4Cmds, mobileObject, &scene))
           {
-               std::cerr << "couldnt execute action for: " << ss.str() << "\n";
+               std::cerr << "couldnt execute action" << "\n";
                return 2;
           }
      }
      usleep(100000);
-     cout << "Close\n"
-          << endl; // To tylko, aby pokazac wysylana instrukcje
+     std::cout << "Close\n" << std::endl; // To tylko, aby pokazac wysylana instrukcje
      Send(Socket4Sending, "Close\n");
      ClientSender.CancelCountinueLooping();
      Thread4Sending.join();
