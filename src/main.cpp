@@ -3,10 +3,12 @@
 #include <cassert>
 #include <string>
 #include <sstream>
-
+#include "Set4LibInterfaces.hpp"
+#include "Scene.hh"
 #include "xmlinterp.hh"
 #include "sender.hpp"
 #include <list>
+#include "exceptions.hpp"
 
 #define LINE_SIZE 500
 
@@ -27,32 +29,34 @@ bool ExecPreprocesor(const char *NazwaPliku, std::stringstream &IStrm4Cmds)
      return pclose(pProc) == 0;
 }
 
-/*!
- * Czyta z pliku opis poleceń i dodaje je do listy komend,
- * które robot musi wykonać.
- * \param sFileName - (\b we.) nazwa pliku z opisem poleceń.
- * \param CmdList - (\b we.) zarządca listy poleceń dla robota.
- * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
- * \retval false - w przeciwnym przypadku.
- */
-
 int main(int argc, char **argv)
 {
      Set4LibInterfaces libInterfaces;
      Scene scene;
 
-     Configuration Config(libInterfaces, scene);
+     Configuration Config;
+
+     std::stringstream IStrm4Cmds;
+     std::cout << "Port: " << PORT << std::endl;
+     int Socket4Sending;
+     Sender ClientSender(Socket4Sending, &scene);
+     std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
 
      if (!ReadFile("../config/config.xml", Config))
-          return 1;
+     {
+          std::cerr<<"Couldnt read configuration file \n";
+
+     }
+          
+
+     libInterfaces.configure(Config);
+     scene.configure(Config);
 
      if (argc < 2)
      {
           std::cerr << "Too few arguments\n";
           return 1;
      }
-
-     std::stringstream IStrm4Cmds;
 
      if (!ExecPreprocesor(argv[1], IStrm4Cmds))
      {
@@ -61,24 +65,17 @@ int main(int argc, char **argv)
      }
      std::cout << IStrm4Cmds.str() << "\n";
 
-     std::cout << "Port: " << PORT << std::endl;
-     int Socket4Sending;
-
      if (!OpenConnection(Socket4Sending))
           return 1;
 
-     Sender ClientSender(Socket4Sending, &scene);
-
-     std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
-
      std::string libName, objectName;
-     while(IStrm4Cmds >> libName >> objectName)
+     while (IStrm4Cmds >> libName >> objectName)
      {
           std::shared_ptr<MobileObj> mobileObject = scene.findMobileObject(objectName);
           if (!mobileObject)
           {
                std::cerr << "couldnt find object: " << objectName << "\n";
-               return 2;
+               throw interpreterException("dupa");
           }
           std::shared_ptr<LibInterface> interface = libInterfaces.findInterface(libName);
           if (!interface)
@@ -89,15 +86,19 @@ int main(int argc, char **argv)
 
           if (!interface->execActions(IStrm4Cmds, mobileObject, &scene))
           {
-               std::cerr << "couldnt execute action" << "\n";
-               return 2;
+               std::cerr << "couldnt execute action"
+                         << "\n";
+               throw interpreterException("dupa");
           }
      }
      usleep(100000);
-     std::cout << "Close\n" << std::endl; // To tylko, aby pokazac wysylana instrukcje
+
+     std::cout << "Close\n"
+               << std::endl; // To tylko, aby pokazac wysylana instrukcje
      Send(Socket4Sending, "Close\n");
      ClientSender.CancelCountinueLooping();
      Thread4Sending.join();
      close(Socket4Sending);
+
      return 0;
 }

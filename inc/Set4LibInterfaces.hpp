@@ -4,6 +4,7 @@
 #include <string>
 #include <memory>
 #include "LibInterface.hh"
+#include "Configuration.hh"
 
 /*!
  * \file
@@ -27,6 +28,7 @@ private:
     std::map<std::string, std::shared_ptr<LibInterface>> set4LibInterfaces;
 
 public:
+bool configure(Configuration& config);
     Set4LibInterfaces() = default;
     /*!
  * \brief metoda umożliwiająca znalezienie danego interfejsu.
@@ -64,8 +66,19 @@ bool Set4LibInterfaces::addInterface(const std::string &libname)
     auto libInterface = std::make_shared<LibInterface>();
     if (!libInterface->initInterface(libname))
     {
+        std::cerr<< "couldnt load "<<libname<<std::endl;
         return false;
     }
     set4LibInterfaces.insert({libname, libInterface});
     return true;
+}
+
+bool Set4LibInterfaces::configure(Configuration& config)
+{
+    bool succeded = false;
+    for(std::string& lib : config.libsConfiguration)
+    {
+        succeded = addInterface(lib);
+    }
+    return succeded;
 }

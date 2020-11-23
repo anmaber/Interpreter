@@ -1,16 +1,4 @@
-#include <xercesc/util/PlatformUtils.hpp>
 #include "xmlinterp.hh"
-#include <cassert>
-#include <sstream>
-#include <cstdlib>
-#include <iostream>
-
-
-
-
-using namespace std;
-using namespace xercesc;
-
 
 /*!
  * Konstruktor klasy. Tutaj należy zainicjalizować wszystkie
@@ -27,7 +15,7 @@ XMLInterp4Config::XMLInterp4Config(Configuration &rConfig)
  */
 void XMLInterp4Config::startDocument()
 {
-  cout << "*** Rozpoczecie przetwarzania dokumentu XML." << endl;
+  std::cout << "*** Rozpoczecie przetwarzania dokumentu XML." << std::endl;
 }
 
 /*!
@@ -36,7 +24,7 @@ void XMLInterp4Config::startDocument()
  */
 void XMLInterp4Config::endDocument()
 {
-  cout << "=== Koniec przetwarzania dokumentu XML." << endl;
+  std::cout << "=== Koniec przetwarzania dokumentu XML." << std::endl;
 }
 
 /*!
@@ -47,7 +35,7 @@ void XMLInterp4Config::ProcessLibAttrs(const xercesc::Attributes &Attrs)
 {
   if (Attrs.getLength() != 1)
   {
-    cerr << "Zla ilosc atrybutow dla \"Lib\"" << endl;
+    std::cerr << "Zla ilosc atrybutow dla \"Lib\"" << std::endl;
     exit(1);
   }
 
@@ -55,21 +43,16 @@ void XMLInterp4Config::ProcessLibAttrs(const xercesc::Attributes &Attrs)
 
   if (strcmp(sParamName, "Name"))
   {
-    cerr << "Zla nazwa atrybutu dla Lib" << endl;
+    std::cerr << "Zla nazwa atrybutu dla Lib" << std::endl;
     exit(1);
   }
 
   XMLSize_t Size = 0;
   char *sLibName = xercesc::XMLString::transcode(Attrs.getValue(Size));
 
-  cout << "  Nazwa biblioteki: " << sLibName << endl;
+  std::cout << "  Nazwa biblioteki: " << sLibName << std::endl;
   //TO DO: przenies caly fragment do config
-  bool addedLibSuccesfully = config.libinterfaces.addInterface(sLibName);
-  if (!addedLibSuccesfully)
-  {
-    std::cerr << "couldnt init lib: " << sLibName << "\n";
-    exit(1);
-  }
+  config.libsConfiguration.push_back(sLibName);
 
   xercesc::XMLString::release(&sParamName);
   xercesc::XMLString::release(&sLibName);
@@ -84,7 +67,7 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes &Attrs)
 {
   if (Attrs.getLength() != 3)
   {
-    cerr << "Zla ilosc atrybutow dla \"Cube\"" << endl;
+    std::cerr << "Zla ilosc atrybutow dla \"Cube\"" << std::endl;
     exit(1);
   }
 
@@ -105,33 +88,31 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes &Attrs)
   //------------------------------------------------
   // Wyświetlenie nazw atrybutów i ich "wartości"
   //
-  cout << " Atrybuty:" << endl
-       << "     " << sName_Name << " = \"" << sValue_Name << "\"" << endl
-       << "     " << sName_SizeXYZ << " = \"" << sValue_SizeXYZ << "\"" << endl
-       << "     " << sName_RGB << " = \"" << sValue_RGB << "\"" << endl
-       << endl;
+  std::cout << " Atrybuty:" << std::endl
+            << "     " << sName_Name << " = \"" << sValue_Name << "\"" << std::endl
+            << "     " << sName_SizeXYZ << " = \"" << sValue_SizeXYZ << "\"" << std::endl
+            << "     " << sName_RGB << " = \"" << sValue_RGB << "\"" << std::endl
+            << std::endl;
   //------------------------------------------------
   // Przykład czytania wartości parametrów
   //
-  istringstream IStrm;
+  std::istringstream IStrm;
   IStrm.str(sValue_SizeXYZ);
   double x, y, z;
 
   IStrm >> x >> y >> z;
   if (IStrm.fail())
   {
-    cerr << " Blad!!!" << endl;
+    std::cerr << " Blad!!!" << std::endl;
   }
   else
   {
-    cout << " Czytanie wartosci OK!!!" << endl;
-    cout << "     " << x << "  " << y << "  " << z << endl;
+    std::cout << " Czytanie wartosci OK!!!" << std::endl;
+    std::cout << "     " << x << "  " << y << "  " << z << std::endl;
   }
-
-  // Tu trzeba wstawić odpowiednio własny kod ...
   //TO DO: przenies caly fragment do config
-  config.scene.addMobileObject(sValue_Name);
-
+  config.sceneConfiguration.push_back({sValue_Name, sValue_SizeXYZ, sValue_RGB});
+  
   xercesc::XMLString::release(&sName_Name);
   xercesc::XMLString::release(&sName_SizeXYZ);
   xercesc::XMLString::release(&sName_RGB);
@@ -188,7 +169,7 @@ void XMLInterp4Config::startElement(const XMLCh *const pURI,
                                     const xercesc::Attributes &Attrs)
 {
   char *sElemName = xercesc::XMLString::transcode(pLocalName);
-  cout << "+++ Poczatek elementu: " << sElemName << endl;
+  std::cout << "+++ Poczatek elementu: " << sElemName << std::endl;
 
   WhenStartElement(sElemName, Attrs);
 
@@ -217,7 +198,7 @@ void XMLInterp4Config::endElement(const XMLCh *const pURI,
                                   const XMLCh *const pQName)
 {
   char *sElemName = xercesc::XMLString::transcode(pLocalName);
-  cout << "----- Koniec elementu: " << sElemName << endl;
+  std::cout << "----- Koniec elementu: " << sElemName << std::endl;
 
   xercesc::XMLString::release(&sElemName);
 }
@@ -235,12 +216,12 @@ void XMLInterp4Config::fatalError(const xercesc::SAXParseException &Exception)
   char *sMessage = xercesc::XMLString::transcode(Exception.getMessage());
   char *sSystemId = xercesc::XMLString::transcode(Exception.getSystemId());
 
-  cerr << "Blad fatalny! " << endl
-       << "    Plik:  " << sSystemId << endl
-       << "   Linia: " << Exception.getLineNumber() << endl
-       << " Kolumna: " << Exception.getColumnNumber() << endl
-       << " Informacja: " << sMessage
-       << endl;
+  std::cerr << "Blad fatalny! " << std::endl
+            << "    Plik:  " << sSystemId << std::endl
+            << "   Linia: " << Exception.getLineNumber() << std::endl
+            << " Kolumna: " << Exception.getColumnNumber() << std::endl
+            << " Informacja: " << sMessage
+            << std::endl;
 
   xercesc::XMLString::release(&sMessage);
   xercesc::XMLString::release(&sSystemId);
@@ -256,7 +237,7 @@ void XMLInterp4Config::fatalError(const xercesc::SAXParseException &Exception)
  */
 void XMLInterp4Config::error(const xercesc::SAXParseException &Exception)
 {
-  cerr << "Blad ..." << endl;
+  std::cerr << "Blad ..." << std::endl;
 
   /*
    * Tutaj należy wstawić odpowiedni kod. Tekst wyświetlany powyżej
@@ -269,7 +250,7 @@ void XMLInterp4Config::error(const xercesc::SAXParseException &Exception)
  */
 void XMLInterp4Config::warning(const xercesc::SAXParseException &Exception)
 {
-  cerr << "Ostrzezenie ..." << endl;
+  std::cerr << "Ostrzezenie ..." << std::endl;
 
   /*
    * Tutaj należy wstawić odpowiedni kod. Tekst wyświetlany powyżej
@@ -277,82 +258,81 @@ void XMLInterp4Config::warning(const xercesc::SAXParseException &Exception)
    */
 }
 
-
 bool ReadFile(const char *sFileName, Configuration &rConfig)
 {
-     try
-     {
-          XMLPlatformUtils::Initialize();
-     }
-     catch (const XMLException &toCatch)
-     {
-          char *message = XMLString::transcode(toCatch.getMessage());
-          cerr << "Error during initialization! :\n";
-          cerr << "Exception message is: \n"
-               << message << "\n";
-          XMLString::release(&message);
-          return 1;
-     }
+  try
+  {
+    XMLPlatformUtils::Initialize();
+  }
+  catch (const XMLException &toCatch)
+  {
+    char *message = XMLString::transcode(toCatch.getMessage());
+    std::cerr << "Error during initialization! :\n";
+    std::cerr << "Exception message is: \n"
+              << message << "\n";
+    XMLString::release(&message);
+    return 1;
+  }
 
-     SAX2XMLReader *pParser = XMLReaderFactory::createXMLReader();
+  SAX2XMLReader *pParser = XMLReaderFactory::createXMLReader();
 
-     pParser->setFeature(XMLUni::fgSAX2CoreNameSpaces, true);
-     pParser->setFeature(XMLUni::fgSAX2CoreValidation, true);
-     pParser->setFeature(XMLUni::fgXercesDynamic, false);
-     pParser->setFeature(XMLUni::fgXercesSchema, true);
-     pParser->setFeature(XMLUni::fgXercesSchemaFullChecking, true);
+  pParser->setFeature(XMLUni::fgSAX2CoreNameSpaces, true);
+  pParser->setFeature(XMLUni::fgSAX2CoreValidation, true);
+  pParser->setFeature(XMLUni::fgXercesDynamic, false);
+  pParser->setFeature(XMLUni::fgXercesSchema, true);
+  pParser->setFeature(XMLUni::fgXercesSchemaFullChecking, true);
 
-     pParser->setFeature(XMLUni::fgXercesValidationErrorAsFatal, true);
+  pParser->setFeature(XMLUni::fgXercesValidationErrorAsFatal, true);
 
-     DefaultHandler *pHandler = new XMLInterp4Config(rConfig);
-     pParser->setContentHandler(pHandler);
-     pParser->setErrorHandler(pHandler);
+  DefaultHandler *pHandler = new XMLInterp4Config(rConfig);
+  pParser->setContentHandler(pHandler);
+  pParser->setErrorHandler(pHandler);
 
-     try
-     {
+  try
+  {
 
-          if (!pParser->loadGrammar("../config/config.xsd",
-                                    xercesc::Grammar::SchemaGrammarType, true))
-          {
-               cerr << "!!! Plik grammar/actions.xsd, '" << endl
-                    << "!!! ktory zawiera opis gramatyki, nie moze zostac wczytany."
-                    << endl;
-               return false;
-          }
-          pParser->setFeature(XMLUni::fgXercesUseCachedGrammarInParse, true);
-          pParser->parse(sFileName);
-     }
-     catch (const XMLException &Exception)
-     {
-          char *sMessage = XMLString::transcode(Exception.getMessage());
-          cerr << "Informacja o wyjatku: \n"
-               << "   " << sMessage << "\n";
-          XMLString::release(&sMessage);
-          return false;
-     }
-     catch (const SAXParseException &Exception)
-     {
-          char *sMessage = XMLString::transcode(Exception.getMessage());
-          char *sSystemId = xercesc::XMLString::transcode(Exception.getSystemId());
+    if (!pParser->loadGrammar("../config/config.xsd",
+                              xercesc::Grammar::SchemaGrammarType, true))
+    {
+      std::cerr << "!!! Plik grammar/actions.xsd, '" << std::endl
+                << "!!! ktory zawiera opis gramatyki, nie moze zostac wczytany."
+                << std::endl;
+      return false;
+    }
+    pParser->setFeature(XMLUni::fgXercesUseCachedGrammarInParse, true);
+    pParser->parse(sFileName);
+  }
+  catch (const XMLException &Exception)
+  {
+    char *sMessage = XMLString::transcode(Exception.getMessage());
+    std::cerr << "Informacja o wyjatku: \n"
+              << "   " << sMessage << "\n";
+    XMLString::release(&sMessage);
+    return false;
+  }
+  catch (const SAXParseException &Exception)
+  {
+    char *sMessage = XMLString::transcode(Exception.getMessage());
+    char *sSystemId = xercesc::XMLString::transcode(Exception.getSystemId());
 
-          cerr << "Blad! " << endl
-               << "    Plik:  " << sSystemId << endl
-               << "   Linia: " << Exception.getLineNumber() << endl
-               << " Kolumna: " << Exception.getColumnNumber() << endl
-               << " Informacja: " << sMessage
-               << endl;
+    std::cerr << "Blad! " << std::endl
+              << "    Plik:  " << sSystemId << std::endl
+              << "   Linia: " << Exception.getLineNumber() << std::endl
+              << " Kolumna: " << Exception.getColumnNumber() << std::endl
+              << " Informacja: " << sMessage
+              << std::endl;
 
-          XMLString::release(&sMessage);
-          XMLString::release(&sSystemId);
-          return false;
-     }
-     catch (...)
-     {
-          cout << "Zgloszony zostal nieoczekiwany wyjatek!\n";
-          return false;
-     }
+    XMLString::release(&sMessage);
+    XMLString::release(&sSystemId);
+    return false;
+  }
+  catch (...)
+  {
+    std::cout << "Zgloszony zostal nieoczekiwany wyjatek!\n";
+    return false;
+  }
 
-     delete pParser;
-     delete pHandler;
-     return true;
+  delete pParser;
+  delete pHandler;
+  return true;
 }
