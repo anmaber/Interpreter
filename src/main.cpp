@@ -39,8 +39,6 @@ int main(int argc, char **argv)
      std::stringstream IStrm4Cmds;
      std::cout << "Port: " << PORT << std::endl;
      int Socket4Sending;
-     Sender ClientSender(Socket4Sending, &scene);
-     std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
 
      if (!ReadFile("../config/config.xml", Config))
      {
@@ -51,6 +49,13 @@ int main(int argc, char **argv)
 
      libInterfaces.configure(Config);
      scene.configure(Config);
+
+     if (!OpenConnection(Socket4Sending))
+          return 1;
+
+     Sender ClientSender(Socket4Sending, &scene);
+     std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
+
 
      if (argc < 2)
      {
@@ -65,9 +70,6 @@ int main(int argc, char **argv)
      }
      std::cout << IStrm4Cmds.str() << "\n";
 
-     if (!OpenConnection(Socket4Sending))
-          return 1;
-
      std::string libName, objectName;
      while (IStrm4Cmds >> libName >> objectName)
      {
@@ -75,7 +77,7 @@ int main(int argc, char **argv)
           if (!mobileObject)
           {
                std::cerr << "couldnt find object: " << objectName << "\n";
-               throw interpreterException("dupa");
+               return 2;
           }
           std::shared_ptr<LibInterface> interface = libInterfaces.findInterface(libName);
           if (!interface)
@@ -88,7 +90,6 @@ int main(int argc, char **argv)
           {
                std::cerr << "couldnt execute action"
                          << "\n";
-               throw interpreterException("dupa");
           }
      }
      usleep(100000);
