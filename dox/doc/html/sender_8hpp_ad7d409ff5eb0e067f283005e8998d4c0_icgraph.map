@@ -1,0 +1,6 @@
+<map id="Send" name="Send">
+<area shape="rect" id="node2" href="$main_8cpp.html#a9929c6438106076cee9705353db05302" title="cleanUp" alt="" coords="360,5,429,32"/>
+<area shape="rect" id="node4" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="105,54,256,95"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="533,32,584,59"/>
+<area shape="rect" id="node5" href="$sender_8hpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="304,57,485,84"/>
+</map>

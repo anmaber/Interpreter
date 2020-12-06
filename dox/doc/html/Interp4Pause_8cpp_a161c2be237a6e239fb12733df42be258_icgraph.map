@@ -1,0 +1,4 @@
+<map id="GetCmdName" name="GetCmdName">
+<area shape="rect" id="node2" href="$classInterp4Pause.html#a2c2cff88acbf4b30147d60f47f181494" title="Wyświetla nazwę polecenia. " alt="" coords="157,5,344,32"/>
+<area shape="rect" id="node3" href="$classInterp4Pause.html#a53181eb25fc5a9c0104400f561c8ce62" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów) " alt="" coords="392,5,551,32"/>
+</map>

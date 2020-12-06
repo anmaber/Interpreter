@@ -1,0 +1,6 @@
+<map id="ExecCmd" name="ExecCmd">
+<area shape="rect" id="node2" href="$classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671" title="Zwiększa indeks stanu, o ile aktualny opis nie jest pusty. " alt="" coords="137,5,318,32"/>
+<area shape="rect" id="node3" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="137,56,318,83"/>
+<area shape="rect" id="node4" href="$classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła. " alt="" coords="135,107,319,133"/>
+<area shape="rect" id="node5" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="131,157,324,184"/>
+</map>

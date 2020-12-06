@@ -1,0 +1,7 @@
+warning: doxygen no longer ships with the FreeSans font.
+You may want to clear or change DOT_FONTNAME.
+Otherwise you run the risk that the wrong font is being used for dot generated graphs.
+warning: The selected output language "polish" has not been updated
+since release 1.8.2.  As a result some sentences may appear in English.
+
+/media/ab/DATA1/zamp/zalazek/inc/geomVector.hh:405: warning: documented symbol `Type geom::Vector< Type, Size >::operator&' was not declared or defined.

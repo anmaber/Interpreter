@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy Set4LibInterfaces.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Set4LibInterfaces_8hpp_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Set4LibInterfaces.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Set4LibInterfaces_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LibInterface_8hh.html">LibInterface.hh</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Configuration_8hh.html">Configuration.hh</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classSet4LibInterfaces.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSet4LibInterfaces.html">Set4LibInterfaces</a></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">   28</a></span>&#160;    std::map&lt;std::string, std::shared_ptr&lt;LibInterface&gt;&gt; <a class="code" href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">set4LibInterfaces</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterfaces.html#a119356cafbf95b6d09ef9a1cfa768763">configure</a>(<a class="code" href="structConfiguration.html">Configuration</a>&amp; config);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classSet4LibInterfaces.html#a5d978f9d40318debc7543a77f2fb4d15">Set4LibInterfaces</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::shared_ptr&lt;LibInterface&gt; <a class="code" href="classSet4LibInterfaces.html#afb9def159a49b6e54766b82693905211">findInterface</a>(<span class="keyword">const</span> std::string &amp;libName);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7">addInterface</a>(<span class="keyword">const</span> std::string &amp;libname);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classSet4LibInterfaces.html#ad3d07a9182c31c598a7c75badf09c0d4">~Set4LibInterfaces</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classSet4LibInterfaces.html#afb9def159a49b6e54766b82693905211">   50</a></span>&#160;std::shared_ptr&lt;LibInterface&gt; <a class="code" href="classSet4LibInterfaces.html#afb9def159a49b6e54766b82693905211">Set4LibInterfaces::findInterface</a>(<span class="keyword">const</span> std::string &amp;cmdName)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::string libName(<span class="stringliteral">&quot;libInterp4&quot;</span>);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    libName.append(cmdName);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    libName.append(<span class="stringliteral">&quot;.so&quot;</span>);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> iter = <a class="code" href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">set4LibInterfaces</a>.find(libName);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (iter != <a class="code" href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">set4LibInterfaces</a>.end())</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> iter-&gt;second;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7">   64</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7">Set4LibInterfaces::addInterface</a>(<span class="keyword">const</span> std::string &amp;libname)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">auto</span> libInterface = std::make_shared&lt;LibInterface&gt;();</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (!libInterface-&gt;initInterface(libname))</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::cerr&lt;&lt; <span class="stringliteral">&quot;couldnt load &quot;</span>&lt;&lt;libname&lt;&lt;std::endl;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">set4LibInterfaces</a>.insert({libname, libInterface});</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classSet4LibInterfaces.html#a119356cafbf95b6d09ef9a1cfa768763">   76</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSet4LibInterfaces.html#a119356cafbf95b6d09ef9a1cfa768763">Set4LibInterfaces::configure</a>(<a class="code" href="structConfiguration.html">Configuration</a>&amp; config)</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> succeded = <span class="keyword">false</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span>(std::string&amp; lib : config.<a class="code" href="structConfiguration.html#a9d5f20e047aa3545889430d1856c6111">libsConfiguration</a>)</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        succeded = <a class="code" href="classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7">addInterface</a>(lib);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> succeded;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div><div class="ttc" id="LibInterface_8hh_html"><div class="ttname"><a href="LibInterface_8hh.html">LibInterface.hh</a></div><div class="ttdoc">Definicja klasy LibInterface. </div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_a119356cafbf95b6d09ef9a1cfa768763"><div class="ttname"><a href="classSet4LibInterfaces.html#a119356cafbf95b6d09ef9a1cfa768763">Set4LibInterfaces::configure</a></div><div class="ttdeci">bool configure(Configuration &amp;config)</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterfaces_8hpp_source.html#l00076">Set4LibInterfaces.hpp:76</a></div></div>
+<div class="ttc" id="structConfiguration_html_a9d5f20e047aa3545889430d1856c6111"><div class="ttname"><a href="structConfiguration.html#a9d5f20e047aa3545889430d1856c6111">Configuration::libsConfiguration</a></div><div class="ttdeci">std::vector&lt; std::string &gt; libsConfiguration</div><div class="ttdoc">wektor zawierający konfiguracyjne ciągi znaków dla zbioru bibliotek. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00045">Configuration.hh:45</a></div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_a08bc98dafd79d4058ded44583b74fbb7"><div class="ttname"><a href="classSet4LibInterfaces.html#a08bc98dafd79d4058ded44583b74fbb7">Set4LibInterfaces::set4LibInterfaces</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; LibInterface &gt; &gt; set4LibInterfaces</div><div class="ttdoc">zbiór interfejsów wtyczek dla których kluczami są ich nazwy. </div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterfaces_8hpp_source.html#l00028">Set4LibInterfaces.hpp:28</a></div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_a5d978f9d40318debc7543a77f2fb4d15"><div class="ttname"><a href="classSet4LibInterfaces.html#a5d978f9d40318debc7543a77f2fb4d15">Set4LibInterfaces::Set4LibInterfaces</a></div><div class="ttdeci">Set4LibInterfaces()=default</div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_afb9def159a49b6e54766b82693905211"><div class="ttname"><a href="classSet4LibInterfaces.html#afb9def159a49b6e54766b82693905211">Set4LibInterfaces::findInterface</a></div><div class="ttdeci">std::shared_ptr&lt; LibInterface &gt; findInterface(const std::string &amp;libName)</div><div class="ttdoc">metoda umożliwiająca znalezienie danego interfejsu. </div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterfaces_8hpp_source.html#l00050">Set4LibInterfaces.hpp:50</a></div></div>
+<div class="ttc" id="Configuration_8hh_html"><div class="ttname"><a href="Configuration_8hh.html">Configuration.hh</a></div></div>
+<div class="ttc" id="structConfiguration_html"><div class="ttname"><a href="structConfiguration.html">Configuration</a></div><div class="ttdoc">Modeluje zbiory struktur konfiguracyjnych dla sceny i dla zbioru bibliotek. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00034">Configuration.hh:34</a></div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_ae9014002e3d1152b7d54810e094be2a7"><div class="ttname"><a href="classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7">Set4LibInterfaces::addInterface</a></div><div class="ttdeci">bool addInterface(const std::string &amp;libname)</div><div class="ttdoc">metoda umożliwiająca dodanie nowego interfejsu </div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterfaces_8hpp_source.html#l00064">Set4LibInterfaces.hpp:64</a></div></div>
+<div class="ttc" id="classSet4LibInterfaces_html"><div class="ttname"><a href="classSet4LibInterfaces.html">Set4LibInterfaces</a></div><div class="ttdoc">Modeluje zbiór typu klucz – wartość dla interfejsów wtyczek. </div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterfaces_8hpp_source.html#l00022">Set4LibInterfaces.hpp:22</a></div></div>
+<div class="ttc" id="classSet4LibInterfaces_html_ad3d07a9182c31c598a7c75badf09c0d4"><div class="ttname"><a href="classSet4LibInterfaces.html#ad3d07a9182c31c598a7c75badf09c0d4">Set4LibInterfaces::~Set4LibInterfaces</a></div><div class="ttdeci">~Set4LibInterfaces()=default</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="Set4LibInterfaces_8hpp.html">Set4LibInterfaces.hpp</a></li>
+    <li class="footer">Wygenerowano Pn, 23 lis 2020 16:19:50 dla Interpreter programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

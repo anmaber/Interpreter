@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy Configuration.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('Configuration_8hh_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Configuration.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Configuration_8hh.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structsceneElementConfiguration.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structsceneElementConfiguration.html">sceneElementConfiguration</a></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structsceneElementConfiguration.html#a764b3f9e41623df10d1c3cc9e2ca1481">   17</a></span>&#160;  std::string <a class="code" href="structsceneElementConfiguration.html#a764b3f9e41623df10d1c3cc9e2ca1481">name</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structsceneElementConfiguration.html#a69f6e87e84229b4a6f4ad930bdfdb920">   22</a></span>&#160;  std::string <a class="code" href="structsceneElementConfiguration.html#a69f6e87e84229b4a6f4ad930bdfdb920">size</a>;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structsceneElementConfiguration.html#a0fe8229b0b92e079046ed1d4c2572ca5">   27</a></span>&#160;  std::string <a class="code" href="structsceneElementConfiguration.html#a0fe8229b0b92e079046ed1d4c2572ca5">color</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structConfiguration.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structConfiguration.html">Configuration</a></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structConfiguration.html#a729e9dd37977fd918509d34a30f000f5">   40</a></span>&#160;  std::vector&lt;sceneElementConfiguration&gt; sceneConfiguration{};</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structConfiguration.html#a9d5f20e047aa3545889430d1856c6111">   45</a></span>&#160;  std::vector&lt;std::string&gt; libsConfiguration{};</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div><div class="ttc" id="structsceneElementConfiguration_html_a764b3f9e41623df10d1c3cc9e2ca1481"><div class="ttname"><a href="structsceneElementConfiguration.html#a764b3f9e41623df10d1c3cc9e2ca1481">sceneElementConfiguration::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">string zawierający nazwę elementu. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00017">Configuration.hh:17</a></div></div>
+<div class="ttc" id="structConfiguration_html"><div class="ttname"><a href="structConfiguration.html">Configuration</a></div><div class="ttdoc">Modeluje zbiory struktur konfiguracyjnych dla sceny i dla zbioru bibliotek. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00034">Configuration.hh:34</a></div></div>
+<div class="ttc" id="structsceneElementConfiguration_html_a0fe8229b0b92e079046ed1d4c2572ca5"><div class="ttname"><a href="structsceneElementConfiguration.html#a0fe8229b0b92e079046ed1d4c2572ca5">sceneElementConfiguration::color</a></div><div class="ttdeci">std::string color</div><div class="ttdoc">string zawierający kolor elementu. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00027">Configuration.hh:27</a></div></div>
+<div class="ttc" id="structsceneElementConfiguration_html_a69f6e87e84229b4a6f4ad930bdfdb920"><div class="ttname"><a href="structsceneElementConfiguration.html#a69f6e87e84229b4a6f4ad930bdfdb920">sceneElementConfiguration::size</a></div><div class="ttdeci">std::string size</div><div class="ttdoc">string zawierający rozmiar elementu. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00022">Configuration.hh:22</a></div></div>
+<div class="ttc" id="structsceneElementConfiguration_html"><div class="ttname"><a href="structsceneElementConfiguration.html">sceneElementConfiguration</a></div><div class="ttdoc">Modeluje strukturę konfiguracyjną dla sceny. </div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00011">Configuration.hh:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="Configuration_8hh.html">Configuration.hh</a></li>
+    <li class="footer">Wygenerowano Pn, 23 lis 2020 16:19:50 dla Interpreter programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

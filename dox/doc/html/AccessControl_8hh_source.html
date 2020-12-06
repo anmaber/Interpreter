@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy AccessControl.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('AccessControl_8hh_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">AccessControl.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="AccessControl_8hh.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ACCESSCONTROLL_HH</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ACCESSCONTROLL_HH</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classAccessControl.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAccessControl.html">AccessControl</a> {</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classAccessControl.html#a9f0515dae7f45da0b48b6b6a3f339151">   22</a></span>&#160;    std::mutex   <a class="code" href="classAccessControl.html#a9f0515dae7f45da0b48b6b6a3f339151">_InternalGuard</a>;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classAccessControl.html#a9d303176f0e6e59a9d851a3cb4ccce16">   29</a></span>&#160;    <span class="keywordtype">bool</span>         <a class="code" href="classAccessControl.html#a9d303176f0e6e59a9d851a3cb4ccce16">_Changed</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classAccessControl.html#a6aeed1e667886d21269a62e23d959864">   33</a></span>&#160;    std::mutex  <a class="code" href="classAccessControl.html#a6aeed1e667886d21269a62e23d959864">_ExternalGuard</a>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f">   42</a></span>&#160;   <span class="keywordtype">bool</span> <a class="code" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f">IsChanged</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classAccessControl.html#a9d303176f0e6e59a9d851a3cb4ccce16">_Changed</a>; }</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">   46</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">MarkChange</a>() { _InternalGuard.lock();  _Changed = <span class="keyword">true</span>;  _InternalGuard.unlock(); }</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classAccessControl.html#ac05a143ff477cee359603872b7642943">   50</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classAccessControl.html#ac05a143ff477cee359603872b7642943">CancelChange</a>() { _InternalGuard.lock();  _Changed = <span class="keyword">false</span>;  _InternalGuard.unlock(); }</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">   54</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">LockAccess</a>() { _ExternalGuard.lock(); }</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">   58</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">UnlockAccess</a>() { _ExternalGuard.unlock(); } </div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif </span></div><div class="ttc" id="classAccessControl_html_a9f0515dae7f45da0b48b6b6a3f339151"><div class="ttname"><a href="classAccessControl.html#a9f0515dae7f45da0b48b6b6a3f339151">AccessControl::_InternalGuard</a></div><div class="ttdeci">std::mutex _InternalGuard</div><div class="ttdoc">Zapewnia wyłączny dostęp do obiektu w trakcie modyfikacji. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00022">AccessControl.hh:22</a></div></div>
+<div class="ttc" id="classAccessControl_html"><div class="ttname"><a href="classAccessControl.html">AccessControl</a></div><div class="ttdoc">Przechowuje informacje o zmianie. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00018">AccessControl.hh:18</a></div></div>
+<div class="ttc" id="classAccessControl_html_a69f4526ff524e6b37b530f97d0419706"><div class="ttname"><a href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">AccessControl::MarkChange</a></div><div class="ttdeci">void MarkChange()</div><div class="ttdoc">Zaznaczenie, że zmiana nastąpiła. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00046">AccessControl.hh:46</a></div></div>
+<div class="ttc" id="classAccessControl_html_a687d41c24cb496f070915eb7c813f08f"><div class="ttname"><a href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f">AccessControl::IsChanged</a></div><div class="ttdeci">bool IsChanged() const</div><div class="ttdoc">Dostęp do informacji o zmianie. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00042">AccessControl.hh:42</a></div></div>
+<div class="ttc" id="classAccessControl_html_aff3de9ca43882da925567c0057618cc5"><div class="ttname"><a href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">AccessControl::UnlockAccess</a></div><div class="ttdeci">void UnlockAccess()</div><div class="ttdoc">Otwiera dostęp do całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00058">AccessControl.hh:58</a></div></div>
+<div class="ttc" id="classAccessControl_html_a9d303176f0e6e59a9d851a3cb4ccce16"><div class="ttname"><a href="classAccessControl.html#a9d303176f0e6e59a9d851a3cb4ccce16">AccessControl::_Changed</a></div><div class="ttdeci">bool _Changed</div><div class="ttdoc">Przechowuje informacje o zmianie. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00029">AccessControl.hh:29</a></div></div>
+<div class="ttc" id="classAccessControl_html_a6aeed1e667886d21269a62e23d959864"><div class="ttname"><a href="classAccessControl.html#a6aeed1e667886d21269a62e23d959864">AccessControl::_ExternalGuard</a></div><div class="ttdeci">std::mutex _ExternalGuard</div><div class="ttdoc">Wykorzystywany do blokowania całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00033">AccessControl.hh:33</a></div></div>
+<div class="ttc" id="classAccessControl_html_ac05a143ff477cee359603872b7642943"><div class="ttname"><a href="classAccessControl.html#ac05a143ff477cee359603872b7642943">AccessControl::CancelChange</a></div><div class="ttdeci">void CancelChange()</div><div class="ttdoc">Skasowanie informacji, że zmiana nastąpiła. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00050">AccessControl.hh:50</a></div></div>
+<div class="ttc" id="classAccessControl_html_abd4921dc14c3568563c2ae35f4b43c29"><div class="ttname"><a href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">AccessControl::LockAccess</a></div><div class="ttdeci">void LockAccess()</div><div class="ttdoc">Zamyka dostęp całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00054">AccessControl.hh:54</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="AccessControl_8hh.html">AccessControl.hh</a></li>
+    <li class="footer">Wygenerowano Pn, 23 lis 2020 16:19:50 dla Interpreter programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

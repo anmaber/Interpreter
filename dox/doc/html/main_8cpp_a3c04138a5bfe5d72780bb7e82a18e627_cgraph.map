@@ -1,0 +1,21 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$main_8cpp.html#a9929c6438106076cee9705353db05302" title="cleanUp" alt="" coords="160,56,229,83"/>
+<area shape="rect" id="node5" href="$classSet4LibInterfaces.html#a119356cafbf95b6d09ef9a1cfa768763" title="Set4LibInterfaces::\lconfigure" alt="" coords="130,207,259,249"/>
+<area shape="rect" id="node7" href="$classScene.html#aabe42e5cfa66ccf0e8ab13832b6048df" title="metoda umożliwiająca skonfigurowanie sceny. " alt="" coords="136,324,253,351"/>
+<area shape="rect" id="node9" href="$classScene.html#a115766d010c2017d116c66163f1c05a2" title="metoda umożliwiająca znalezienie danego obiektu mobilnego. " alt="" coords="619,324,780,351"/>
+<area shape="rect" id="node10" href="$main_8cpp.html#ad76c50b4b362514a5397234e1412b069" title="ExecPreprocesor" alt="" coords="135,375,254,401"/>
+<area shape="rect" id="node11" href="$sender_8hpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="104,152,285,179"/>
+<area shape="rect" id="node18" href="$sender_8hpp.html#a49ba9261b2ded960bce23328c431e31d" title="OpenConnection" alt="" coords="135,425,254,452"/>
+<area shape="rect" id="node19" href="$xmlinterp_8hh.html#ae98290dceda14c563cc55e5d85b91a2f" title="ReadFile" alt="" coords="158,476,231,503"/>
+<area shape="rect" id="node3" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="333,5,545,32"/>
+<area shape="rect" id="node4" href="$sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="673,20,725,47"/>
+<area shape="rect" id="node6" href="$classSet4LibInterfaces.html#ae9014002e3d1152b7d54810e094be2a7" title="metoda umożliwiająca dodanie nowego interfejsu " alt="" coords="375,207,504,249"/>
+<area shape="rect" id="node8" href="$classScene.html#aa025e75879408c593f7fa60d52603807" title="metoda umożliwiająca dodanie nowego obiektu mobilnego. " alt="" coords="358,324,521,351"/>
+<area shape="rect" id="node12" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="364,142,515,183"/>
+<area shape="rect" id="node13" href="$classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana. " alt="" coords="593,71,805,97"/>
+<area shape="rect" id="node14" href="$classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie. " alt="" coords="613,121,785,148"/>
+<area shape="rect" id="node15" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="609,172,790,199"/>
+<area shape="rect" id="node16" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="602,223,797,249"/>
+<area shape="rect" id="node17" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="603,273,796,300"/>
+<area shape="rect" id="node20" href="$classXMLInterp4Config.html#a5b02088c3e4421d8606f3a2e1f9ba411" title="Inicjalizuje obiekt i kojarzy go z listą poleceń robota. " alt="" coords="340,469,539,510"/>
+</map>

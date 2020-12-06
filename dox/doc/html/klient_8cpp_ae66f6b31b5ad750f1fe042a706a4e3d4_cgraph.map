@@ -1,0 +1,16 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="104,56,316,83"/>
+<area shape="rect" id="node3" href="$klient_8cpp.html#aaca4d056f70631dccb2164ee33a195fe" title="Przykład wykonywania pojedynczej operacji z animacją. " alt="" coords="171,107,249,133"/>
+<area shape="rect" id="node6" href="$classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła. " alt="" coords="364,157,548,184"/>
+<area shape="rect" id="node8" href="$klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="119,208,301,235"/>
+<area shape="rect" id="node14" href="$klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d" title="OpenConnection" alt="" coords="151,259,269,285"/>
+<area shape="rect" id="node15" href="$klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="184,309,236,336"/>
+<area shape="rect" id="node4" href="$classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671" title="Zwiększa indeks stanu, o ile aktualny opis nie jest pusty. " alt="" coords="365,5,547,32"/>
+<area shape="rect" id="node5" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="611,57,793,84"/>
+<area shape="rect" id="node7" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="605,109,799,136"/>
+<area shape="rect" id="node9" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="381,209,531,250"/>
+<area shape="rect" id="node10" href="$classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana. " alt="" coords="596,265,808,292"/>
+<area shape="rect" id="node11" href="$classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie. " alt="" coords="616,316,788,343"/>
+<area shape="rect" id="node12" href="$sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="676,164,728,191"/>
+<area shape="rect" id="node13" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="605,215,799,241"/>
+</map>

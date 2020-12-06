@@ -1,0 +1,7 @@
+<map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
+<area shape="rect" id="node1" href="$classInterp4Command.html" title="Modeluje abstrakcyjne polecenie dla robota mobilnego. " alt="" coords="5,81,127,108"/>
+<area shape="rect" id="node2" href="$classInterp4Move.html" title="Modeluje polecenie dla robota mobilnego, które wymusza jego ruch do przodu. " alt="" coords="178,5,271,32"/>
+<area shape="rect" id="node3" href="$classInterp4Pause.html" title="Modeluje polecenie dla robota mobilnego, które wymusza jego pauze na określony czas. " alt="" coords="175,56,274,83"/>
+<area shape="rect" id="node4" href="$classInterp4Rotate.html" title="Modeluje polecenie dla robota mobilnego, które wymusza jego obrót. " alt="" coords="175,107,275,133"/>
+<area shape="rect" id="node5" href="$classInterp4Set.html" title="Modeluje polecenie dla robota mobilnego, które wymusza jego przesunięcie do wybranego punktu..." alt="" coords="183,157,266,184"/>
+</map>

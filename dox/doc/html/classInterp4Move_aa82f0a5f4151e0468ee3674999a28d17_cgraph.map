@@ -1,0 +1,17 @@
+<map id="Interp4Move::ExecCmd" name="Interp4Move::ExecCmd">
+<area shape="rect" id="node2" href="$Interp4Command_8hh.html#a737bf65495cfb87925d454b2b263f25d" title="compareDouble" alt="" coords="249,5,361,32"/>
+<area shape="rect" id="node3" href="$classMobileObj.html#a603ab3729a87dca148ce4a64f0d066f7" title="Udostępia wartość niebieskości, z której składa się kolor obiektu. " alt="" coords="235,57,375,98"/>
+<area shape="rect" id="node4" href="$classMobileObj.html#a56ce888f7f7c24dfb3e9ed1d0c3f38dc" title="Udostępia wartość zieleni, z której składa się kolor obiektu. " alt="" coords="231,122,380,163"/>
+<area shape="rect" id="node5" href="$classMobileObj.html#a07d821a08ae7eb0307c4c567ae468d02" title="Udostępia wartość czerwieni, z której składa się kolor obiektu. " alt="" coords="237,187,374,229"/>
+<area shape="rect" id="node6" href="$classMobileObj.html#abdea2095e14eee4dcaced2e1b487dfd7" title="Udostępia rozmiar obiektu wzdłuż osi X. " alt="" coords="228,253,383,280"/>
+<area shape="rect" id="node7" href="$classMobileObj.html#a576a9840bf7b22632b02d5a7f65c3fb3" title="Udostępia rozmiar obiektu wzdłuż osi Y. " alt="" coords="228,304,383,331"/>
+<area shape="rect" id="node8" href="$classMobileObj.html#a5e31fbad0e22aab5c5e2918aa9aa43e4" title="Udostępia rozmiar obiektu wzdłuż osi Z. " alt="" coords="228,355,383,381"/>
+<area shape="rect" id="node9" href="$classMobileObj.html#a02fee3485623a6e6ae2f0eba20f233e0" title="Udostępia wartość kąta pitch. " alt="" coords="208,405,403,432"/>
+<area shape="rect" id="node10" href="$classMobileObj.html#a8f2c805c7522d2b0cde36327c82ff64a" title="Udostępia wartość kąta roll. " alt="" coords="212,456,399,483"/>
+<area shape="rect" id="node11" href="$classMobileObj.html#a5b8b5c669a5826ddc77f66aa918a3376" title="Udostępia wartość kąta yaw. " alt="" coords="210,507,401,533"/>
+<area shape="rect" id="node12" href="$classMobileObj.html#a6b7c6a17e9e5a17d258afcf065242548" title="Udostępnia współrzędne położenia obiektu w trybie tylko do odczytu. " alt="" coords="220,557,391,584"/>
+<area shape="rect" id="node13" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="215,608,396,635"/>
+<area shape="rect" id="node14" href="$classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła. " alt="" coords="213,659,397,685"/>
+<area shape="rect" id="node15" href="$classMobileObj.html#a1bebe1bd87b363c1f87d708f9549eaf3" title="Zmienia współrzędne położenia obiektu. " alt="" coords="220,709,391,736"/>
+<area shape="rect" id="node16" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="209,760,402,787"/>
+</map>

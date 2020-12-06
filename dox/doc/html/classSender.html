@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Dokumentacja klasy Sender</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('classSender.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="classSender-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy Sender</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny.  
+ <a href="classSender.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sender_8hpp_source.html">sender.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla Sender:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSender__coll__graph.png" border="0" usemap="#Sender_coll__map" alt="Collaboration graph"/></div>
+<map name="Sender_coll__map" id="Sender_coll__map">
+<area shape="rect" id="node2" href="classScene.html" title="Modeluje zbiór typu klucz &#45; wartość dla obiektów mobilnych. " alt="" coords="29,81,87,108"/>
+<area shape="rect" id="node3" href="classAccessControl.html" title="Przechowuje informacje o zmianie. " alt="" coords="5,5,111,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:addd56adbe4bfb0f7ef14a03dc97cda48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#addd56adbe4bfb0f7ef14a03dc97cda48">Sender</a> (int Socket, <a class="el" href="classScene.html">Scene</a> *pScn)</td></tr>
+<tr class="memdesc:addd56adbe4bfb0f7ef14a03dc97cda48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obiekt reagował.  <a href="#addd56adbe4bfb0f7ef14a03dc97cda48">Więcej...</a><br /></td></tr>
+<tr class="separator:addd56adbe4bfb0f7ef14a03dc97cda48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd228566d864f234a2a56650c8d7c4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e">ShouldCountinueLooping</a> () const</td></tr>
+<tr class="memdesc:a3dd228566d864f234a2a56650c8d7c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sprawdza, czy pętla wątku może być wykonywana.  <a href="#a3dd228566d864f234a2a56650c8d7c4e">Więcej...</a><br /></td></tr>
+<tr class="separator:a3dd228566d864f234a2a56650c8d7c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96412f54520d550dd1ea3e9b3bb29786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786">CancelCountinueLooping</a> ()</td></tr>
+<tr class="memdesc:a96412f54520d550dd1ea3e9b3bb29786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Powoduje przerwanie działania pętli wątku.  <a href="#a96412f54520d550dd1ea3e9b3bb29786">Więcej...</a><br /></td></tr>
+<tr class="separator:a96412f54520d550dd1ea3e9b3bb29786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100a3e1f1a1ab4c388391e5b5a6de9f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Watching_and_Sending</a> ()</td></tr>
+<tr class="memdesc:a100a3e1f1a1ab4c388391e5b5a6de9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ta metoda jest de facto treścią wątku komunikacyjnego.  <a href="#a100a3e1f1a1ab4c388391e5b5a6de9f8">Więcej...</a><br /></td></tr>
+<tr class="separator:a100a3e1f1a1ab4c388391e5b5a6de9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:ac805bb5b0bb9c453bc8f06129a5fe7e4"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#ac805bb5b0bb9c453bc8f06129a5fe7e4">_ContinueLooping</a> = true</td></tr>
+<tr class="memdesc:ac805bb5b0bb9c453bc8f06129a5fe7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartość tego pola decyduje o kontynuacji wykonywania wątku.  <a href="#ac805bb5b0bb9c453bc8f06129a5fe7e4">Więcej...</a><br /></td></tr>
+<tr class="separator:ac805bb5b0bb9c453bc8f06129a5fe7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03595ac3f31168d0a6344f55c637586c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#a03595ac3f31168d0a6344f55c637586c">_Socket</a> = 0</td></tr>
+<tr class="memdesc:a03595ac3f31168d0a6344f55c637586c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deskryptor gniazda sieciowego, poprzez które wysyłane są polecenia.  <a href="#a03595ac3f31168d0a6344f55c637586c">Więcej...</a><br /></td></tr>
+<tr class="separator:a03595ac3f31168d0a6344f55c637586c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a40fb7d6b64de89f6252fc28a1d57d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a> = nullptr</td></tr>
+<tr class="memdesc:a72a40fb7d6b64de89f6252fc28a1d57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wskaźnik na scenę, które stan jest przesyłany w postaci poleceń do serwera graficzneg.  <a href="#a72a40fb7d6b64de89f6252fc28a1d57d">Więcej...</a><br /></td></tr>
+<tr class="separator:a72a40fb7d6b64de89f6252fc28a1d57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny. W tym celu monitoruje zmiany na scenie, a gdy je wykryje przesyła informacje o aktualnej pozycji wszystkich obiektów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00051">51</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="addd56adbe4bfb0f7ef14a03dc97cda48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd56adbe4bfb0f7ef14a03dc97cda48">&#9670;&nbsp;</a></span>Sender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sender::Sender </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classScene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>pScn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00076">76</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;: <a class="code" href="classSender.html#a03595ac3f31168d0a6344f55c637586c">_Socket</a>(Socket), <a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>(pScn) {}</div><div class="ttc" id="classSender_html_a72a40fb7d6b64de89f6252fc28a1d57d"><div class="ttname"><a href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">Sender::_pScn</a></div><div class="ttdeci">Scene * _pScn</div><div class="ttdoc">Wskaźnik na scenę, które stan jest przesyłany w postaci poleceń do serwera graficzneg. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00069">sender.hpp:69</a></div></div>
+<div class="ttc" id="classSender_html_a03595ac3f31168d0a6344f55c637586c"><div class="ttname"><a href="classSender.html#a03595ac3f31168d0a6344f55c637586c">Sender::_Socket</a></div><div class="ttdeci">int _Socket</div><div class="ttdoc">Deskryptor gniazda sieciowego, poprzez które wysyłane są polecenia. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00064">sender.hpp:64</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a96412f54520d550dd1ea3e9b3bb29786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96412f54520d550dd1ea3e9b3bb29786">&#9670;&nbsp;</a></span>CancelCountinueLooping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sender::CancelCountinueLooping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Powoduje przerwanie działania pętli wątku. </p><dl class="section warning"><dt>Ostrzeżenie</dt><dd>Reakcja na tę operację nie będize natychmiastowa. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00092">92</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="main_8cpp_source.html#l00031">cleanUp()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{ <a class="code" href="classSender.html#ac805bb5b0bb9c453bc8f06129a5fe7e4">_ContinueLooping</a> = <span class="keyword">false</span>; }</div><div class="ttc" id="classSender_html_ac805bb5b0bb9c453bc8f06129a5fe7e4"><div class="ttname"><a href="classSender.html#ac805bb5b0bb9c453bc8f06129a5fe7e4">Sender::_ContinueLooping</a></div><div class="ttdeci">volatile bool _ContinueLooping</div><div class="ttdoc">Wartość tego pola decyduje o kontynuacji wykonywania wątku. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00060">sender.hpp:60</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSender_a96412f54520d550dd1ea3e9b3bb29786_icgraph.png" border="0" usemap="#classSender_a96412f54520d550dd1ea3e9b3bb29786_icgraph" alt=""/></div>
+<map name="classSender_a96412f54520d550dd1ea3e9b3bb29786_icgraph" id="classSender_a96412f54520d550dd1ea3e9b3bb29786_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a9929c6438106076cee9705353db05302" title="cleanUp" alt="" coords="265,5,335,32"/>
+<area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="383,5,433,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3dd228566d864f234a2a56650c8d7c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd228566d864f234a2a56650c8d7c4e">&#9670;&nbsp;</a></span>ShouldCountinueLooping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Sender::ShouldCountinueLooping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sprawdza, czy pętla wątku może być wykonywana. </p><dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- pętla wątku może być nadal wykonywana. </td></tr>
+    <tr><td class="paramname">false</td><td>- w przypadku przeciwnym. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00085">85</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="sender_8hpp_source.html#l00060">_ContinueLooping</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="sender_8hpp_source.html#l00102">Watching_and_Sending()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSender.html#ac805bb5b0bb9c453bc8f06129a5fe7e4">_ContinueLooping</a>; }</div><div class="ttc" id="classSender_html_ac805bb5b0bb9c453bc8f06129a5fe7e4"><div class="ttname"><a href="classSender.html#ac805bb5b0bb9c453bc8f06129a5fe7e4">Sender::_ContinueLooping</a></div><div class="ttdeci">volatile bool _ContinueLooping</div><div class="ttdoc">Wartość tego pola decyduje o kontynuacji wykonywania wątku. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00060">sender.hpp:60</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSender_a3dd228566d864f234a2a56650c8d7c4e_icgraph.png" border="0" usemap="#classSender_a3dd228566d864f234a2a56650c8d7c4e_icgraph" alt=""/></div>
+<map name="classSender_a3dd228566d864f234a2a56650c8d7c4e_icgraph" id="classSender_a3dd228566d864f234a2a56650c8d7c4e_icgraph">
+<area shape="rect" id="node2" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="265,5,416,47"/>
+<area shape="rect" id="node3" href="sender_8hpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="464,13,645,39"/>
+<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="693,13,744,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a100a3e1f1a1ab4c388391e5b5a6de9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100a3e1f1a1ab4c388391e5b5a6de9f8">&#9670;&nbsp;</a></span>Watching_and_Sending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sender::Watching_and_Sending </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Przegląda scenę i tworzy odpowiednie polecenia, a następnie wysyła je do serwera. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Socket</td><td>- deskryptor gniazda sieciowego, poprzez które wysyłane są polecenia. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00102">102</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="AccessControl_8hh_source.html#l00050">AccessControl::CancelChange()</a>, <a class="el" href="AccessControl_8hh_source.html#l00042">AccessControl::IsChanged()</a>, <a class="el" href="AccessControl_8hh_source.html#l00054">AccessControl::LockAccess()</a>, <a class="el" href="Scene_8hh_source.html#l00030">Scene::mobileObjects</a>, <a class="el" href="sender_8hpp_source.html#l00027">Send()</a>, <a class="el" href="sender_8hpp_source.html#l00085">ShouldCountinueLooping()</a> i <a class="el" href="AccessControl_8hh_source.html#l00058">AccessControl::UnlockAccess()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="sender_8hpp_source.html#l00141">Fun_CommunicationThread()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e">ShouldCountinueLooping</a>())</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordflow">if</span> (!<a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>-&gt;<a class="code" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f">IsChanged</a>())</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      {</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        usleep(10000);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      }</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>-&gt;<a class="code" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">LockAccess</a>();</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="comment">//------- Przeglądanie tej kolekcji to uproszczony przykład</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <a class="code" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(<a class="code" href="classSender.html#a03595ac3f31168d0a6344f55c637586c">_Socket</a>, <span class="stringliteral">&quot;Clear\n&quot;</span>); <span class="comment">// To jest konieczne, aby usunąć wcześniejsze obiekty.</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Clear\n&quot;</span>;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[objectName, objectPointer] : <a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>-&gt;<a class="code" href="classScene.html#a6917bb9ad90c9c1968727117d6b761db">mobileObjects</a>)</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      {</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// Ta instrukcja to tylko uproszczony przykład</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::cout &lt;&lt; objectPointer-&gt;movingState;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(<a class="code" href="classSender.html#a03595ac3f31168d0a6344f55c637586c">_Socket</a>, objectPointer-&gt;movingState.c_str()); <span class="comment">// Tu musi zostać wywołanie odpowiedniej</span></div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                           <span class="comment">// metody/funkcji gerującej polecenia dla serwera.</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      }</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <a class="code" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(<a class="code" href="classSender.html#a03595ac3f31168d0a6344f55c637586c">_Socket</a>, <span class="stringliteral">&quot;Display\n&quot;</span>); <span class="comment">// To jest konieczne, aby zobaczyć zmiany</span></div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      std::cout &lt;&lt; <span class="stringliteral">&quot;Display\n&quot;</span>;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>-&gt;<a class="code" href="classAccessControl.html#ac05a143ff477cee359603872b7642943">CancelChange</a>();</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <a class="code" href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">_pScn</a>-&gt;<a class="code" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">UnlockAccess</a>();</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div><div class="ttc" id="classAccessControl_html_a687d41c24cb496f070915eb7c813f08f"><div class="ttname"><a href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f">AccessControl::IsChanged</a></div><div class="ttdeci">bool IsChanged() const</div><div class="ttdoc">Dostęp do informacji o zmianie. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00042">AccessControl.hh:42</a></div></div>
+<div class="ttc" id="sender_8hpp_html_ad7d409ff5eb0e067f283005e8998d4c0"><div class="ttname"><a href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a></div><div class="ttdeci">int Send(int Sk2Server, const char *sMesg)</div><div class="ttdoc">Wysyła napis do poprzez gniazdo sieciowe. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00027">sender.hpp:27</a></div></div>
+<div class="ttc" id="classSender_html_a72a40fb7d6b64de89f6252fc28a1d57d"><div class="ttname"><a href="classSender.html#a72a40fb7d6b64de89f6252fc28a1d57d">Sender::_pScn</a></div><div class="ttdeci">Scene * _pScn</div><div class="ttdoc">Wskaźnik na scenę, które stan jest przesyłany w postaci poleceń do serwera graficzneg. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00069">sender.hpp:69</a></div></div>
+<div class="ttc" id="classScene_html_a6917bb9ad90c9c1968727117d6b761db"><div class="ttname"><a href="classScene.html#a6917bb9ad90c9c1968727117d6b761db">Scene::mobileObjects</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; MobileObj &gt; &gt; mobileObjects</div><div class="ttdoc">zbiór obiektów mobilnych dla których kluczami są ich nazwy. </div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hh_source.html#l00030">Scene.hh:30</a></div></div>
+<div class="ttc" id="classAccessControl_html_aff3de9ca43882da925567c0057618cc5"><div class="ttname"><a href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">AccessControl::UnlockAccess</a></div><div class="ttdeci">void UnlockAccess()</div><div class="ttdoc">Otwiera dostęp do całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00058">AccessControl.hh:58</a></div></div>
+<div class="ttc" id="classSender_html_a03595ac3f31168d0a6344f55c637586c"><div class="ttname"><a href="classSender.html#a03595ac3f31168d0a6344f55c637586c">Sender::_Socket</a></div><div class="ttdeci">int _Socket</div><div class="ttdoc">Deskryptor gniazda sieciowego, poprzez które wysyłane są polecenia. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00064">sender.hpp:64</a></div></div>
+<div class="ttc" id="classAccessControl_html_ac05a143ff477cee359603872b7642943"><div class="ttname"><a href="classAccessControl.html#ac05a143ff477cee359603872b7642943">AccessControl::CancelChange</a></div><div class="ttdeci">void CancelChange()</div><div class="ttdoc">Skasowanie informacji, że zmiana nastąpiła. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00050">AccessControl.hh:50</a></div></div>
+<div class="ttc" id="classSender_html_a3dd228566d864f234a2a56650c8d7c4e"><div class="ttname"><a href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e">Sender::ShouldCountinueLooping</a></div><div class="ttdeci">bool ShouldCountinueLooping() const</div><div class="ttdoc">Sprawdza, czy pętla wątku może być wykonywana. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00085">sender.hpp:85</a></div></div>
+<div class="ttc" id="classAccessControl_html_abd4921dc14c3568563c2ae35f4b43c29"><div class="ttname"><a href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">AccessControl::LockAccess</a></div><div class="ttdeci">void LockAccess()</div><div class="ttdoc">Zamyka dostęp całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00054">AccessControl.hh:54</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_cgraph.png" border="0" usemap="#classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_cgraph" alt=""/></div>
+<map name="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_cgraph" id="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_cgraph">
+<area shape="rect" id="node2" href="classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="213,5,407,32"/>
+<area shape="rect" id="node3" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie. " alt="" coords="224,56,396,83"/>
+<area shape="rect" id="node4" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="219,107,401,133"/>
+<area shape="rect" id="node5" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="284,157,336,184"/>
+<area shape="rect" id="node6" href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana. " alt="" coords="204,208,416,235"/>
+<area shape="rect" id="node7" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="213,259,407,285"/>
+</map>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_icgraph.png" border="0" usemap="#classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_icgraph" alt=""/></div>
+<map name="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_icgraph" id="classSender_a100a3e1f1a1ab4c388391e5b5a6de9f8_icgraph">
+<area shape="rect" id="node2" href="sender_8hpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="204,13,385,39"/>
+<area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="433,13,484,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="ac805bb5b0bb9c453bc8f06129a5fe7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac805bb5b0bb9c453bc8f06129a5fe7e4">&#9670;&nbsp;</a></span>_ContinueLooping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool Sender::_ContinueLooping = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Wartość tego pola decyduje o kontynuacji wykonywania wątku. W przypadku wartości <code>true</code>, pętla wątku będzie wykonywana. Natomiast wartość <code>false</code> powoduje przerwanie pętli. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00060">60</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="sender_8hpp_source.html#l00085">ShouldCountinueLooping()</a>.</p>
+
+</div>
+</div>
+<a id="a72a40fb7d6b64de89f6252fc28a1d57d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a40fb7d6b64de89f6252fc28a1d57d">&#9670;&nbsp;</a></span>_pScn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classScene.html">Scene</a>* Sender::_pScn = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00069">69</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a03595ac3f31168d0a6344f55c637586c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03595ac3f31168d0a6344f55c637586c">&#9670;&nbsp;</a></span>_Socket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Sender::_Socket = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="sender_8hpp_source.html#l00064">64</a> pliku <a class="el" href="sender_8hpp_source.html">sender.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="sender_8hpp_source.html">sender.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classSender.html">Sender</a></li>
+    <li class="footer">Wygenerowano Pn, 23 lis 2020 16:19:50 dla Interpreter programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

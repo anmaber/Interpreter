@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Dokumentacja pliku klient.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.13 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('klient_8cpp.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku klient.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="AccessControl_8hh_source.html">AccessControl.hh</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Port_8hh_source.html">Port.hh</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla klient.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp__incl.png" border="0" usemap="#klient_8cpp" alt=""/></div>
+<map name="klient_8cpp" id="klient_8cpp">
+<area shape="rect" id="node13" href="AccessControl_8hh.html" title="Zawiera definicję klasy AccessControl. " alt="" coords="1023,80,1146,107"/>
+<area shape="rect" id="node14" href="Port_8hh.html" title="Port.hh" alt="" coords="1171,80,1233,107"/>
+</map>
+</div>
+</div>
+<p><a href="klient_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGeomObject.html">GeomObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ta klasa trochę udaję klasę <a class="el" href="classMobileObj.html" title="Klasa modelująca obiekt mobilny. ">MobileObj</a>, która jest w zadaniu.  <a href="classGeomObject.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html">Scene</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modeluje zbiór typu klucz - wartość dla obiektów mobilnych.  <a href="classScene.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSender.html">Sender</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny.  <a href="classSender.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a09fc53aa433a4f27b10b469c7e6ec143"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a09fc53aa433a4f27b10b469c7e6ec143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ilość stanów każdego z obiektów.  <a href="#a09fc53aa433a4f27b10b469c7e6ec143">Więcej...</a><br /></td></tr>
+<tr class="separator:a09fc53aa433a4f27b10b469c7e6ec143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ad7d409ff5eb0e067f283005e8998d4c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a> (int Sk2Server, const char *sMesg)</td></tr>
+<tr class="memdesc:ad7d409ff5eb0e067f283005e8998d4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wysyła napis do poprzez gniazdo sieciowe.  <a href="#ad7d409ff5eb0e067f283005e8998d4c0">Więcej...</a><br /></td></tr>
+<tr class="separator:ad7d409ff5eb0e067f283005e8998d4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b5860a5da38cf8fa0d6b1221373f3f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a> (<a class="el" href="classSender.html">Sender</a> *pSender)</td></tr>
+<tr class="memdesc:a6b5860a5da38cf8fa0d6b1221373f3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja jest treścią wątku komunikacyjnego.  <a href="#a6b5860a5da38cf8fa0d6b1221373f3f9">Więcej...</a><br /></td></tr>
+<tr class="separator:a6b5860a5da38cf8fa0d6b1221373f3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ba9261b2ded960bce23328c431e31d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a> (int &amp;rSocket)</td></tr>
+<tr class="separator:a49ba9261b2ded960bce23328c431e31d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca4d056f70631dccb2164ee33a195fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#aaca4d056f70631dccb2164ee33a195fe">ExecCmd</a> (<a class="el" href="classGeomObject.html">GeomObject</a> *pObj, <a class="el" href="classAccessControl.html">AccessControl</a> *pAccCtrl)</td></tr>
+<tr class="memdesc:aaca4d056f70631dccb2164ee33a195fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przykład wykonywania pojedynczej operacji z animacją.  <a href="#aaca4d056f70631dccb2164ee33a195fe">Więcej...</a><br /></td></tr>
+<tr class="separator:aaca4d056f70631dccb2164ee33a195fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a49fe5f195163689bbfe55a0c58af9bf8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a49fe5f195163689bbfe55a0c58af9bf8">Cmds4Obj1</a> [<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td></tr>
+<tr class="separator:a49fe5f195163689bbfe55a0c58af9bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81004ea3be684511a4731fe652df0de7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a81004ea3be684511a4731fe652df0de7">Cmds4Obj2</a> [<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td></tr>
+<tr class="separator:a81004ea3be684511a4731fe652df0de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0203bd8da7e918e84de94392a67e8c07"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="klient_8cpp.html#a0203bd8da7e918e84de94392a67e8c07">Cmds4Obj3</a> [<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td></tr>
+<tr class="separator:a0203bd8da7e918e84de94392a67e8c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a09fc53aa433a4f27b10b469c7e6ec143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09fc53aa433a4f27b10b469c7e6ec143">&#9670;&nbsp;</a></span>STATES_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATES_NUMBER&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ilość stanów każdego z obiektów. Podział na kolejne stany obiektów wykorzystywany jest do animacji ruchu obiektów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00056">56</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00150">GeomObject::IncStateIndex()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="aaca4d056f70631dccb2164ee33a195fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca4d056f70631dccb2164ee33a195fe">&#9670;&nbsp;</a></span>ExecCmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ExecCmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classGeomObject.html">GeomObject</a> *&#160;</td>
+          <td class="paramname"><em>pObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classAccessControl.html">AccessControl</a> *&#160;</td>
+          <td class="paramname"><em>pAccCtrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Przykład wykonywania pojedynczej operacji z animacją. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pObj</td><td>- wskaźnik na obiekt, dla którego ma być wykonana dana operacja zmiany jego stanu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pAccCtrl</td><td>- wskaźnik na obiekt, poprzez który przekazywana jest informacja o zmianie na scenie, zaś w trakcie dokonywania zmianay zamykany jest dostęp do całej sceny. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>- w tym przypadku zawsze zwracana jest wartość <code>true</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00323">323</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="klient_8cpp_source.html#l00150">GeomObject::IncStateIndex()</a>, <a class="el" href="AccessControl_8hh_source.html#l00054">AccessControl::LockAccess()</a>, <a class="el" href="AccessControl_8hh_source.html#l00046">AccessControl::MarkChange()</a> i <a class="el" href="AccessControl_8hh_source.html#l00058">AccessControl::UnlockAccess()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00342">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  <span class="keywordtype">bool</span> Changed;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    pAccCtrl-&gt;<a class="code" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">LockAccess</a>(); <span class="comment">// Zamykamy dostęp do sceny, gdy wykonujemy</span></div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                           <span class="comment">// modyfikacje na obiekcie.</span></div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span> (!(Changed = pObj-&gt;<a class="code" href="classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671">IncStateIndex</a>())) { pAccCtrl-&gt;<a class="code" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">UnlockAccess</a>();  <span class="keywordflow">break</span>; }</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    pAccCtrl-&gt;<a class="code" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">MarkChange</a>();</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    pAccCtrl-&gt;<a class="code" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">UnlockAccess</a>();</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    usleep(300000);</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  }</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div><div class="ttc" id="classAccessControl_html_a69f4526ff524e6b37b530f97d0419706"><div class="ttname"><a href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">AccessControl::MarkChange</a></div><div class="ttdeci">void MarkChange()</div><div class="ttdoc">Zaznaczenie, że zmiana nastąpiła. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00046">AccessControl.hh:46</a></div></div>
+<div class="ttc" id="classGeomObject_html_aa50e5f662f2504fd4c3dc3297794a671"><div class="ttname"><a href="classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671">GeomObject::IncStateIndex</a></div><div class="ttdeci">bool IncStateIndex()</div><div class="ttdoc">Zwiększa indeks stanu, o ile aktualny opis nie jest pusty. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00150">klient.cpp:150</a></div></div>
+<div class="ttc" id="classAccessControl_html_aff3de9ca43882da925567c0057618cc5"><div class="ttname"><a href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5">AccessControl::UnlockAccess</a></div><div class="ttdeci">void UnlockAccess()</div><div class="ttdoc">Otwiera dostęp do całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00058">AccessControl.hh:58</a></div></div>
+<div class="ttc" id="classAccessControl_html_abd4921dc14c3568563c2ae35f4b43c29"><div class="ttname"><a href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29">AccessControl::LockAccess</a></div><div class="ttdeci">void LockAccess()</div><div class="ttdoc">Zamyka dostęp całej sceny. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00054">AccessControl.hh:54</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_cgraph.png" border="0" usemap="#klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_cgraph" alt=""/></div>
+<map name="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_cgraph" id="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_cgraph">
+<area shape="rect" id="node2" href="classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671" title="Zwiększa indeks stanu, o ile aktualny opis nie jest pusty. " alt="" coords="137,5,318,32"/>
+<area shape="rect" id="node3" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="137,56,318,83"/>
+<area shape="rect" id="node4" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła. " alt="" coords="135,107,319,133"/>
+<area shape="rect" id="node5" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="131,157,324,184"/>
+</map>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_icgraph.png" border="0" usemap="#klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_icgraph" alt=""/></div>
+<map name="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_icgraph" id="klient_8cpp_aaca4d056f70631dccb2164ee33a195fe_icgraph">
+<area shape="rect" id="node2" href="klient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="131,5,181,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b5860a5da38cf8fa0d6b1221373f3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b5860a5da38cf8fa0d6b1221373f3f9">&#9670;&nbsp;</a></span>Fun_CommunicationThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fun_CommunicationThread </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSender.html">Sender</a> *&#160;</td>
+          <td class="paramname"><em>pSender</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja jest treścią wątku komunikacyjnego. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rSender</td><td>- odpowiada za śledenie zmian na scenie i przesyłanie do serwera graficznego aktualnego stanu sceny, gdy uległ on zmianie. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00272">272</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="sender_8hpp_source.html#l00102">Sender::Watching_and_Sending()</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00342">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  pSender-&gt;<a class="code" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Watching_and_Sending</a>();</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div><div class="ttc" id="classSender_html_a100a3e1f1a1ab4c388391e5b5a6de9f8"><div class="ttname"><a href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8">Sender::Watching_and_Sending</a></div><div class="ttdeci">void Watching_and_Sending()</div><div class="ttdoc">Ta metoda jest de facto treścią wątku komunikacyjnego. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00102">sender.hpp:102</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_cgraph.png" border="0" usemap="#klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_cgraph" alt=""/></div>
+<map name="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_cgraph" id="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_cgraph">
+<area shape="rect" id="node2" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="235,125,385,166"/>
+<area shape="rect" id="node3" href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana. " alt="" coords="433,5,645,32"/>
+<area shape="rect" id="node4" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie. " alt="" coords="453,56,625,83"/>
+<area shape="rect" id="node5" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="449,107,630,133"/>
+<area shape="rect" id="node6" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="513,157,565,184"/>
+<area shape="rect" id="node7" href="classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="442,208,637,235"/>
+<area shape="rect" id="node8" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="443,259,636,285"/>
+</map>
+</div>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_icgraph.png" border="0" usemap="#klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_icgraph" alt=""/></div>
+<map name="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_icgraph" id="klient_8cpp_a6b5860a5da38cf8fa0d6b1221373f3f9_icgraph">
+<area shape="rect" id="node2" href="klient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="235,5,285,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00342">342</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="klient_8cpp_source.html#l00176">Scene::_Container4Objects</a>, <a class="el" href="sender_8hpp_source.html#l00092">Sender::CancelCountinueLooping()</a>, <a class="el" href="klient_8cpp_source.html#l00323">ExecCmd()</a>, <a class="el" href="klient_8cpp_source.html#l00272">Fun_CommunicationThread()</a>, <a class="el" href="AccessControl_8hh_source.html#l00046">AccessControl::MarkChange()</a>, <a class="el" href="klient_8cpp_source.html#l00283">OpenConnection()</a>, <a class="el" href="Port_8hh_source.html#l00011">PORT</a> i <a class="el" href="klient_8cpp_source.html#l00029">Send()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;Port: &quot;</span> &lt;&lt; <a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a> &lt;&lt; endl;</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  <a class="code" href="classScene.html">Scene</a>               Scn;</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordtype">int</span>                 Socket4Sending;   </div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a>(Socket4Sending)) <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  </div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  <a class="code" href="classSender.html">Sender</a>   ClientSender(Socket4Sending,&amp;Scn);</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="comment">//  thread   Thread4Sending(Fun_Sender, Socket4Sending, &amp;ClientSender);</span></div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  thread   Thread4Sending(<a class="code" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a>,&amp;ClientSender);</div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classGeomObject.html">GeomObject</a> &amp;rObj : Scn.<a class="code" href="classScene.html#a2fd6070d2e5f05d47e819d21df6af750">_Container4Objects</a>) {</div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    usleep(20000);</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="klient_8cpp.html#aaca4d056f70631dccb2164ee33a195fe">ExecCmd</a>(&amp;rObj,&amp;Scn);</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    Scn.<a class="code" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">MarkChange</a>();</div><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    usleep(100000);</div><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  usleep(100000);</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  <span class="comment">//-------------------------------------</span></div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="comment">// Należy pamiętać o zamknięciu połączenia.</span></div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  <span class="comment">// Bez tego serwer nie będzie reagował na</span></div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="comment">// nowe połączenia.</span></div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  <span class="comment">//</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;Close\n&quot;</span> &lt;&lt; endl; <span class="comment">// To tylko, aby pokazac wysylana instrukcje</span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  <a class="code" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a>(Socket4Sending,<span class="stringliteral">&quot;Close\n&quot;</span>);</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  ClientSender.CancelCountinueLooping();</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  Thread4Sending.join();</div><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  close(Socket4Sending);</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div><div class="ttc" id="classAccessControl_html_a69f4526ff524e6b37b530f97d0419706"><div class="ttname"><a href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706">AccessControl::MarkChange</a></div><div class="ttdeci">void MarkChange()</div><div class="ttdoc">Zaznaczenie, że zmiana nastąpiła. </div><div class="ttdef"><b>Definition:</b> <a href="AccessControl_8hh_source.html#l00046">AccessControl.hh:46</a></div></div>
+<div class="ttc" id="classGeomObject_html"><div class="ttname"><a href="classGeomObject.html">GeomObject</a></div><div class="ttdoc">Ta klasa trochę udaję klasę MobileObj, która jest w zadaniu. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00104">klient.cpp:104</a></div></div>
+<div class="ttc" id="klient_8cpp_html_ad7d409ff5eb0e067f283005e8998d4c0"><div class="ttname"><a href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0">Send</a></div><div class="ttdeci">int Send(int Sk2Server, const char *sMesg)</div><div class="ttdoc">Wysyła napis do poprzez gniazdo sieciowe. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00029">klient.cpp:29</a></div></div>
+<div class="ttc" id="classScene_html_a2fd6070d2e5f05d47e819d21df6af750"><div class="ttname"><a href="classScene.html#a2fd6070d2e5f05d47e819d21df6af750">Scene::_Container4Objects</a></div><div class="ttdeci">std::vector&lt; GeomObject &gt; _Container4Objects</div><div class="ttdoc">Prosta kolekcja obiektów sceny. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00176">klient.cpp:176</a></div></div>
+<div class="ttc" id="classScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Modeluje zbiór typu klucz - wartość dla obiektów mobilnych. </div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hh_source.html#l00023">Scene.hh:23</a></div></div>
+<div class="ttc" id="klient_8cpp_html_a49ba9261b2ded960bce23328c431e31d"><div class="ttname"><a href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d">OpenConnection</a></div><div class="ttdeci">bool OpenConnection(int &amp;rSocket)</div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00283">klient.cpp:283</a></div></div>
+<div class="ttc" id="klient_8cpp_html_a6b5860a5da38cf8fa0d6b1221373f3f9"><div class="ttname"><a href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9">Fun_CommunicationThread</a></div><div class="ttdeci">void Fun_CommunicationThread(Sender *pSender)</div><div class="ttdoc">Funkcja jest treścią wątku komunikacyjnego. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00272">klient.cpp:272</a></div></div>
+<div class="ttc" id="Port_8hh_html_a614217d263be1fb1a5f76e2ff7be19a2"><div class="ttname"><a href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a></div><div class="ttdeci">#define PORT</div><div class="ttdoc">Port poprzez który realizowana jest komunikacja z klientem. </div><div class="ttdef"><b>Definition:</b> <a href="Port_8hh_source.html#l00011">Port.hh:11</a></div></div>
+<div class="ttc" id="klient_8cpp_html_aaca4d056f70631dccb2164ee33a195fe"><div class="ttname"><a href="klient_8cpp.html#aaca4d056f70631dccb2164ee33a195fe">ExecCmd</a></div><div class="ttdeci">bool ExecCmd(GeomObject *pObj, AccessControl *pAccCtrl)</div><div class="ttdoc">Przykład wykonywania pojedynczej operacji z animacją. </div><div class="ttdef"><b>Definition:</b> <a href="klient_8cpp_source.html#l00323">klient.cpp:323</a></div></div>
+<div class="ttc" id="classSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdoc">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny. </div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00051">sender.hpp:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#klient_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="klient_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="klient_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" id="node2" href="classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku. " alt="" coords="104,56,316,83"/>
+<area shape="rect" id="node3" href="klient_8cpp.html#aaca4d056f70631dccb2164ee33a195fe" title="Przykład wykonywania pojedynczej operacji z animacją. " alt="" coords="171,107,249,133"/>
+<area shape="rect" id="node6" href="classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła. " alt="" coords="364,157,548,184"/>
+<area shape="rect" id="node8" href="klient_8cpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="119,208,301,235"/>
+<area shape="rect" id="node14" href="klient_8cpp.html#a49ba9261b2ded960bce23328c431e31d" title="OpenConnection" alt="" coords="151,259,269,285"/>
+<area shape="rect" id="node15" href="klient_8cpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="184,309,236,336"/>
+<area shape="rect" id="node4" href="classGeomObject.html#aa50e5f662f2504fd4c3dc3297794a671" title="Zwiększa indeks stanu, o ile aktualny opis nie jest pusty. " alt="" coords="365,5,547,32"/>
+<area shape="rect" id="node5" href="classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny. " alt="" coords="611,57,793,84"/>
+<area shape="rect" id="node7" href="classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny. " alt="" coords="605,109,799,136"/>
+<area shape="rect" id="node9" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="381,209,531,250"/>
+<area shape="rect" id="node10" href="classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana. " alt="" coords="596,265,808,292"/>
+<area shape="rect" id="node11" href="classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie. " alt="" coords="616,316,788,343"/>
+<area shape="rect" id="node12" href="sender_8hpp.html#ad7d409ff5eb0e067f283005e8998d4c0" title="Wysyła napis do poprzez gniazdo sieciowe. " alt="" coords="676,164,728,191"/>
+<area shape="rect" id="node13" href="classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła. " alt="" coords="605,215,799,241"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a49ba9261b2ded960bce23328c431e31d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ba9261b2ded960bce23328c431e31d">&#9670;&nbsp;</a></span>OpenConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OpenConnection </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>rSocket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Otwiera połączenie sieciowe </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">rSocket</td><td>- deskryptor gniazda, poprzez które może być realizowana komunikacja sieciowa. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00283">283</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołuje się do <a class="el" href="Port_8hh_source.html#l00011">PORT</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00342">main()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;{</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keyword">struct </span>sockaddr_in  DaneAdSerw;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  bzero((<span class="keywordtype">char</span> *)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw));</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  DaneAdSerw.sin_family = AF_INET;</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  DaneAdSerw.sin_addr.s_addr = inet_addr(<span class="stringliteral">&quot;127.0.0.1&quot;</span>);</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  DaneAdSerw.sin_port = htons(<a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>);</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  rSocket = socket(AF_INET,SOCK_STREAM,0);</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keywordflow">if</span> (rSocket &lt; 0) {</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad otwarcia gniazda.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  }</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keywordflow">if</span> (connect(rSocket,(<span class="keyword">struct</span> sockaddr*)&amp;DaneAdSerw,<span class="keyword">sizeof</span>(DaneAdSerw)) &lt; 0)</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;   {</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;     cerr &lt;&lt; <span class="stringliteral">&quot;*** Brak mozliwosci polaczenia do portu: &quot;</span> &lt;&lt; <a class="code" href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a> &lt;&lt; endl;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;   }</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div><div class="ttc" id="Port_8hh_html_a614217d263be1fb1a5f76e2ff7be19a2"><div class="ttname"><a href="Port_8hh.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a></div><div class="ttdeci">#define PORT</div><div class="ttdoc">Port poprzez który realizowana jest komunikacja z klientem. </div><div class="ttdef"><b>Definition:</b> <a href="Port_8hh_source.html#l00011">Port.hh:11</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_a49ba9261b2ded960bce23328c431e31d_icgraph.png" border="0" usemap="#klient_8cpp_a49ba9261b2ded960bce23328c431e31d_icgraph" alt=""/></div>
+<map name="klient_8cpp_a49ba9261b2ded960bce23328c431e31d_icgraph" id="klient_8cpp_a49ba9261b2ded960bce23328c431e31d_icgraph">
+<area shape="rect" id="node2" href="klient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="172,5,223,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7d409ff5eb0e067f283005e8998d4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d409ff5eb0e067f283005e8998d4c0">&#9670;&nbsp;</a></span>Send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Send </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Sk2Server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sMesg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła napis do poprzez gniazdo sieciowe. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Sk2Server</td><td>- deskryptor gniazda sieciowego, poprzez które ma zostać wysłany napis w sensie języka C. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sMesg</td><td>- zawiera napis, który ma zostać wysłany poprzez gniazdo sieciowe. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00029">29</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00342">main()</a> i <a class="el" href="klient_8cpp_source.html#l00239">Sender::Watching_and_Sending()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  ssize_t  IlWyslanych;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  ssize_t  IlDoWyslania = (ssize_t) strlen(sMesg);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">while</span> ((IlWyslanych = write(Sk2Server,sMesg,IlDoWyslania)) &gt; 0) {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    IlDoWyslania -= IlWyslanych;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sMesg += IlWyslanych;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">if</span> (IlWyslanych &lt; 0) {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    cerr &lt;&lt; <span class="stringliteral">&quot;*** Blad przeslania napisu.&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div></div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="klient_8cpp_ad7d409ff5eb0e067f283005e8998d4c0_icgraph.png" border="0" usemap="#klient_8cpp_ad7d409ff5eb0e067f283005e8998d4c0_icgraph" alt=""/></div>
+<map name="klient_8cpp_ad7d409ff5eb0e067f283005e8998d4c0_icgraph" id="klient_8cpp_ad7d409ff5eb0e067f283005e8998d4c0_icgraph">
+<area shape="rect" id="node2" href="klient_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="155,5,206,32"/>
+<area shape="rect" id="node3" href="classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="105,57,256,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="a49fe5f195163689bbfe55a0c58af9bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fe5f195163689bbfe55a0c58af9bf8">&#9670;&nbsp;</a></span>Cmds4Obj1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* Cmds4Obj1[<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość początkowa:</b><div class="fragment"><div class="line">= {</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0 0 0  0 0 0  0 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0 0 1   5 0 0  0 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0 0 2  10 0 0  0 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0 0 2  15 0 0  0 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0 0 2  20 0 0  0 0 255\n&quot;</span></div><div class="line"> }</div></div><!-- fragment --><p>Zestaw poleceń odpowiadających kolejnym stanom obiektu nr 1 i obrazujących jego ruch. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00062">62</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00166">Scene::Scene()</a>.</p>
+
+</div>
+</div>
+<a id="a81004ea3be684511a4731fe652df0de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81004ea3be684511a4731fe652df0de7">&#9670;&nbsp;</a></span>Cmds4Obj2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* Cmds4Obj2[<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość początkowa:</b><div class="fragment"><div class="line">= {</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  2.5 5 5   0 0 0  105 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  2.0 5 5   0 0 0  105 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  1.5 5 5   0 0 0  105 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  1.0 5 5   0 0 0  105 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  2 2.5 1.1  0.5 5 5   0 0 0  105 0 255\n&quot;</span></div><div class="line"> }</div></div><!-- fragment --><p>Zestaw poleceń odpowiadających kolejnym stanom obiektu nr 2 i obrazujących jego ruch. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00075">75</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00166">Scene::Scene()</a>.</p>
+
+</div>
+</div>
+<a id="a0203bd8da7e918e84de94392a67e8c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0203bd8da7e918e84de94392a67e8c07">&#9670;&nbsp;</a></span>Cmds4Obj3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* Cmds4Obj3[<a class="el" href="klient_8cpp.html#a09fc53aa433a4f27b10b469c7e6ec143">STATES_NUMBER</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Wartość początkowa:</b><div class="fragment"><div class="line">= {</div><div class="line">  <span class="stringliteral">&quot;Cube  3 2.5 1.1 -3.5 -1 -3  0 0 0  50 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  3 2.5 1.1 -3.5 -1 -3  5 5 0  50 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  3 2.5 1.1 -3.5 -1 -3  10 0 0  50 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  3 2.5 1.1 -3.5 -1 -3  15 0 0  50 0 255\n&quot;</span>,</div><div class="line">  <span class="stringliteral">&quot;Cube  3 2.5 1.1 -3.5 -1 -3  20 0 0  50 0 255\n&quot;</span>  </div><div class="line"> }</div></div><!-- fragment --><p>Zestaw poleceń odpowiadających kolejnym stanom obiektu nr 3 i obrazujących jego ruch. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="klient_8cpp_source.html#l00087">87</a> pliku <a class="el" href="klient_8cpp_source.html">klient.cpp</a>.</p>
+
+<p class="reference">Odwołania w <a class="el" href="klient_8cpp_source.html#l00166">Scene::Scene()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="klient_8cpp.html">klient.cpp</a></li>
+    <li class="footer">Wygenerowano Pn, 23 lis 2020 14:29:34 dla Interpreter programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

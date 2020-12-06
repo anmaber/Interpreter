@@ -1,0 +1,5 @@
+<map id="AccessControl::CancelChange" name="AccessControl::CancelChange">
+<area shape="rect" id="node2" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego. " alt="" coords="248,5,399,47"/>
+<area shape="rect" id="node3" href="$sender_8hpp.html#a6b5860a5da38cf8fa0d6b1221373f3f9" title="Funkcja jest treścią wątku komunikacyjnego. " alt="" coords="447,13,628,39"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="676,13,727,39"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Interp4Command::~Interp4Command" name="Interp4Command::~Interp4Command">
+<area shape="rect" id="node2" href="$classInterp4Command.html#a947963e78e72d6f721ca9ce3c7f7c9cb" title="Wykonuje polecenie oraz wizualizuje jego realizację. " alt="" coords="241,5,424,32"/>
+<area shape="rect" id="node3" href="$classInterp4Command.html#a9b1bff7ff363991b35965ae9dfeac648" title="Wyświetla nazwę polecenia. " alt="" coords="228,56,437,83"/>
+<area shape="rect" id="node4" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów). " alt="" coords="242,107,423,133"/>
+<area shape="rect" id="node5" href="$classInterp4Command.html#a693ca79d24ba27d11a19ed6fc90c37b9" title="Wyświetla składnię polecenia. " alt="" coords="236,157,429,184"/>
+<area shape="rect" id="node6" href="$classInterp4Command.html#a3e15ef01af10fa8961926fd9b0274ab8" title="Czyta wartości parametrów danego polecenia. " alt="" coords="232,208,433,235"/>
+</map>
