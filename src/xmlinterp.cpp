@@ -290,12 +290,17 @@ bool ReadFile(const char *sFileName, Configuration &rConfig)
 
   try
   {
+    std::string grammarName(sFileName);
+    grammarName.pop_back();
+    grammarName.pop_back();
+    grammarName.pop_back();
+    grammarName.append("xsd");
 
-    if (!pParser->loadGrammar("../config/config.xsd",
+    if (!pParser->loadGrammar(grammarName.c_str(),
                               xercesc::Grammar::SchemaGrammarType, true))
     {
-      std::cerr << "!!! Plik grammar/actions.xsd, '" << std::endl
-                << "!!! ktory zawiera opis gramatyki, nie moze zostac wczytany."
+      std::cerr << grammarName << std::endl
+                << "!!!Plik ktory zawiera opis gramatyki, nie moze zostac wczytany."
                 << std::endl;
       return false;
     }

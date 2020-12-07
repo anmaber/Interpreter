@@ -8,7 +8,6 @@
 #include "xmlinterp.hh"
 #include "sender.hpp"
 #include <list>
-#include "exceptions.hpp"
 
 #define LINE_SIZE 500
 
@@ -31,6 +30,13 @@ bool ExecPreprocesor(const char *NazwaPliku, std::stringstream &IStrm4Cmds)
 
 int main(int argc, char **argv)
 {
+
+     if (argc < 3)
+     {
+          std::cerr << "Too few arguments\n";
+          return 1;
+     }
+
      Set4LibInterfaces libInterfaces;
      Scene scene;
 
@@ -40,7 +46,7 @@ int main(int argc, char **argv)
      std::cout << "Port: " << PORT << std::endl;
      int Socket4Sending;
 
-     if (!ReadFile("../config/config.xml", Config))
+     if (!ReadFile(argv[1], Config))
      {
           std::cerr<<"Couldnt read configuration file \n";
 
@@ -57,13 +63,7 @@ int main(int argc, char **argv)
      std::thread Thread4Sending(Fun_CommunicationThread, &ClientSender);
 
 
-     if (argc < 2)
-     {
-          std::cerr << "Too few arguments\n";
-          return 1;
-     }
-
-     if (!ExecPreprocesor(argv[1], IStrm4Cmds))
+     if (!ExecPreprocesor(argv[2], IStrm4Cmds))
      {
           std::cerr << "Cannot process\n";
           return 2;
